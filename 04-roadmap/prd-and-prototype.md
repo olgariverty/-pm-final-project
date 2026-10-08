@@ -1,14 +1,16 @@
-# PRD & Prototype Sprint
+# PRD & Prototype Sprint (Module 4)
 
-> **Module 4 · Lab 2.** Repo file `04-roadmap/prd-and-prototype.md` — part of your submission.
-> Do the lab in the **Module 4 · Exercise 2 Guide** (linked from the Module 4 deck), then click **⬇ Download .md** — it saves as this exact file. Commit it here.
-> It deepens the top feature from your `roadmap-prd-prototype.md` and feeds the **Roadmap, PRD & Prototype** slide of your Module 6 deck.
+## Pick & scope with MoSCoW
+- **The “Now” feature I’m scoping (name + one-line core description):** Phone-wallet provisioning. Enable pilot cardholders to add their issued Riverty card to a supported phone wallet for in store payments.
+- **My finalized Must-Haves (after overriding the AI):** - An approved pilot cardholder can add their issued card to one supported phone wallet.
+- The provisioned card can make an in-store payment at a compatible terminal.
+- The user sees whether provisioning succeeded; if it fails, they get a clear next step.
+Dependencies: active issued card, wallet/scheme support and Compliance approval.
+- **What I demoted from Must → Should/Won’t, and why:** Moved card limits and authorisation to dependencies: these belong to the credit and issuing features. Moved transaction tagging to pilot measurement, not wallet functionality. Deferred a second wallet, extra guidance and online/in-app payments because they aren’t needed for the core in-store flow. Card removal and lost-device handling need confirmation from Compliance and the wallet provider before being classified as optional.
 
-## Responses
+## Generate your Simplified PRD
+- **One thing my PRD makes explicit that a vague brief would have missed:** The PRD makes clear that the prototype simulates wallet provisioning, it tests usability, not real payments or M3 impact.
 
-- **The "Now" feature I'm scoping (name + one-line core description):** _(not filled in)_
-- **My finalized Must-Haves (after overriding the AI):** _(not filled in)_
-- **What I demoted from Must → Should/Won't, and why:** _(not filled in)_
-- **One thing my PRD makes explicit that a vague brief would have missed:** _(not filled in)_
-- **Where the prototype revealed a gap in my PRD logic (what I updated):** _(not filled in)_
-- **My shareable prototype URL:** _(not filled in)_
+## Prompt-to-prototype sprint
+- **Where did the prototype reveal a gap in my PRD logic? (what I had to update):** The prototype retained "Step 1 of 2" and "Step 2 of 2" labels, although the final PRD removes the step indicator. The core flow worked as specified.
+- **My prototype, as a link or a screenshot (publish or share from your tool; in Lovable that is Share → Share Preview, in Bolt Publish → Web. No share URL? Screenshot the working flow):** https://req-pilot.lovable.app/

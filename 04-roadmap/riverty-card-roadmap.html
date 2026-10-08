@@ -1,0 +1,356 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Riverty Card · Roadmap</title>
+<style>
+  :root{
+    --bg:#f6f7f9; --surface:#ffffff; --surface-2:#f0f2f5; --text:#14181f; --muted:#5b6472; --border:#dde1e8;
+    --accent:#2f5bea;
+    --qw-bg:#e3f5ea; --qw-fg:#126b37; --qw-bd:#a9dfbf;
+    --mp-bg:#e4ecff; --mp-fg:#1f47c2; --mp-bd:#b3c7fb;
+    --fi-bg:#eceef2; --fi-fg:#4a5361; --fi-bd:#cfd4dc;
+    --ts-bg:#fdeede; --ts-fg:#9a4b07; --ts-bd:#f4c99b;
+    --chip-bg:#f0f2f5;
+    --shadow:0 1px 2px rgba(20,24,31,.06);
+  }
+  @media (prefers-color-scheme: dark){
+    :root:not([data-theme="light"]){
+      --bg:#0f1218; --surface:#181c24; --surface-2:#1f242e; --text:#eef1f6; --muted:#97a1b1; --border:#2b313d;
+      --accent:#7b9bff;
+      --qw-bg:#143323; --qw-fg:#7fe0a6; --qw-bd:#245a3d;
+      --mp-bg:#16264f; --mp-fg:#9fb8ff; --mp-bd:#2b437f;
+      --fi-bg:#262b35; --fi-fg:#b5bdca; --fi-bd:#3a4150;
+      --ts-bg:#3a2410; --ts-fg:#f4b573; --ts-bd:#6a4220;
+      --chip-bg:#1f242e;
+      --shadow:none;
+    }
+  }
+  :root[data-theme="dark"]{
+    --bg:#0f1218; --surface:#181c24; --surface-2:#1f242e; --text:#eef1f6; --muted:#97a1b1; --border:#2b313d;
+    --accent:#7b9bff;
+    --qw-bg:#143323; --qw-fg:#7fe0a6; --qw-bd:#245a3d;
+    --mp-bg:#16264f; --mp-fg:#9fb8ff; --mp-bd:#2b437f;
+    --fi-bg:#262b35; --fi-fg:#b5bdca; --fi-bd:#3a4150;
+    --ts-bg:#3a2410; --ts-fg:#f4b573; --ts-bd:#6a4220;
+    --chip-bg:#1f242e;
+    --shadow:none;
+  }
+  *{box-sizing:border-box}
+  html,body{margin:0}
+  body{
+    background:var(--bg); color:var(--text);
+    font-family:-apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,Helvetica,Arial,sans-serif;
+    line-height:1.45; -webkit-font-smoothing:antialiased;
+    padding:0 0 48px;
+  }
+  .wrap{max-width:1280px;margin:0 auto;padding:28px 24px 0}
+  header{display:flex;flex-wrap:wrap;gap:16px;align-items:flex-start;justify-content:space-between;margin-bottom:20px}
+  .brand{display:flex;align-items:center;gap:12px}
+  .logo{width:38px;height:38px;border-radius:10px;background:var(--accent);display:flex;align-items:center;justify-content:center;color:#fff;font-weight:700;font-size:18px}
+  h1{font-size:22px;margin:0;letter-spacing:-.01em}
+  .sub{color:var(--muted);font-size:14px;margin-top:2px}
+  .meta{display:flex;flex-wrap:wrap;gap:8px;align-items:center}
+  .pill{background:var(--chip-bg);border:1px solid var(--border);border-radius:999px;padding:5px 12px;font-size:13px;color:var(--muted)}
+  .pill b{color:var(--text);font-weight:600}
+  button{font:inherit;color:inherit}
+  .theme-btn{background:var(--surface);border:1px solid var(--border);border-radius:8px;padding:6px 12px;font-size:13px;cursor:pointer}
+  .theme-btn:hover{border-color:var(--accent)}
+
+  .toolbar{display:flex;flex-wrap:wrap;gap:8px;align-items:center;margin-bottom:18px}
+  .toolbar .label{font-size:13px;color:var(--muted);margin-right:4px}
+  .chip{display:inline-flex;align-items:center;gap:6px;border:1px solid var(--border);background:var(--surface);border-radius:999px;padding:5px 12px;font-size:13px;cursor:pointer;transition:border-color .15s,opacity .15s}
+  .chip:hover{border-color:var(--accent)}
+  .chip .dot{width:9px;height:9px;border-radius:50%}
+  .chip[aria-pressed="false"]{opacity:.45}
+  .reset{margin-left:auto;background:none;border:none;color:var(--accent);cursor:pointer;font-size:13px;padding:4px 6px}
+
+  .board{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:16px;align-items:start}
+  @media (max-width:900px){.board{grid-template-columns:1fr}}
+  .lane{background:var(--surface-2);border:1px solid var(--border);border-radius:14px;padding:14px;min-height:140px}
+  .lane.over{outline:2px dashed var(--accent);outline-offset:-4px}
+  .lane-head{display:flex;align-items:baseline;justify-content:space-between;margin-bottom:12px}
+  .lane-title{font-size:13px;font-weight:700;letter-spacing:.08em}
+  .lane-note{font-size:12px;color:var(--muted)}
+  .count{font-size:12px;color:var(--muted);background:var(--surface);border:1px solid var(--border);border-radius:999px;padding:1px 8px;margin-left:8px;font-weight:500;letter-spacing:0}
+  .stack{display:flex;flex-direction:column;gap:10px}
+
+  .card{background:var(--surface);border:1px solid var(--border);border-radius:12px;padding:12px 14px;box-shadow:var(--shadow);cursor:grab}
+  .card:active{cursor:grabbing}
+  .card.dragging{opacity:.4}
+  .card-top{display:flex;gap:10px;align-items:flex-start;justify-content:space-between}
+  .card-name{font-size:15px;font-weight:600;margin:0}
+  .num{color:var(--muted);font-weight:500;margin-right:6px}
+  .rationale{font-size:13.5px;color:var(--muted);margin:8px 0 10px}
+  .badge{display:inline-block;border:1px solid;border-radius:6px;padding:2px 8px;font-size:11.5px;font-weight:600;white-space:nowrap}
+  .qw{background:var(--qw-bg);color:var(--qw-fg);border-color:var(--qw-bd)}
+  .mp{background:var(--mp-bg);color:var(--mp-fg);border-color:var(--mp-bd)}
+  .fi{background:var(--fi-bg);color:var(--fi-fg);border-color:var(--fi-bd)}
+  .ts{background:var(--ts-bg);color:var(--ts-fg);border-color:var(--ts-bd)}
+  .card-foot{display:flex;flex-wrap:wrap;gap:6px;align-items:center;justify-content:space-between}
+  .tags{display:flex;flex-wrap:wrap;gap:5px}
+  .tag{font-size:11.5px;background:var(--chip-bg);border:1px solid var(--border);color:var(--muted);border-radius:5px;padding:1px 7px}
+  .more{background:none;border:none;color:var(--accent);font-size:12.5px;cursor:pointer;padding:2px 0}
+  .detail{display:none;margin-top:10px;padding-top:10px;border-top:1px dashed var(--border);font-size:13px}
+  .card.open .detail{display:block}
+  .scores{display:flex;gap:18px;margin-bottom:10px}
+  .score .k{font-size:11.5px;color:var(--muted)}
+  .meter{display:flex;gap:3px;margin-top:3px}
+  .meter i{width:16px;height:6px;border-radius:2px;background:var(--border)}
+  .meter i.on{background:var(--accent)}
+  .move{display:flex;align-items:center;gap:8px}
+  .move label{font-size:12px;color:var(--muted)}
+  select{font:inherit;font-size:13px;background:var(--surface);color:var(--text);border:1px solid var(--border);border-radius:6px;padding:3px 6px}
+  .banner{font-size:12.5px;color:var(--muted);background:var(--surface);border:1px solid var(--border);border-left:3px solid var(--accent);border-radius:8px;padding:8px 10px;margin:0 0 12px}
+  .flag{font-size:12.5px;font-weight:600;color:var(--ts-fg);background:var(--ts-bg);border:1px solid var(--ts-bd);border-radius:6px;padding:5px 9px;margin:0 0 10px}
+  .tag.role{color:var(--mp-fg);background:var(--mp-bg);border-color:var(--mp-bd);font-weight:600}
+  .empty{font-size:13px;color:var(--muted);text-align:center;padding:18px 6px;border:1px dashed var(--border);border-radius:10px}
+
+  .cut{margin-top:28px}
+  .cut h2{font-size:13px;font-weight:700;letter-spacing:.08em;margin:0 0 4px}
+  .cut p.note{margin:0 0 12px;font-size:13px;color:var(--muted)}
+  .cut-list{display:grid;grid-template-columns:repeat(auto-fill,minmax(300px,1fr));gap:10px;background:var(--surface-2);border:1px solid var(--border);border-radius:14px;padding:14px}
+  .cut-list.over{outline:2px dashed var(--accent);outline-offset:-4px}
+  .cut .card{opacity:.92;border-style:dashed}
+  .cut .card-name{text-decoration:line-through;text-decoration-color:var(--muted)}
+  .reason{font-size:13px;color:var(--muted);margin:8px 0 0}
+  footer{margin-top:26px;font-size:12px;color:var(--muted)}
+</style>
+</head>
+<body>
+<div class="wrap">
+  <header>
+    <div class="brand">
+      <div class="logo">R</div>
+      <div>
+        <h1>Riverty Card</h1>
+        <div class="sub">Roadmap · friends-and-family pilot</div>
+      </div>
+    </div>
+    <div class="meta">
+      <button class="theme-btn" id="themeBtn" type="button">Toggle theme</button>
+    </div>
+  </header>
+
+  <div class="toolbar" id="toolbar" role="group" aria-label="Filter by quadrant">
+    <span class="label">Filter:</span>
+  </div>
+
+  <main class="board" id="board" aria-label="Roadmap lanes"></main>
+
+  <section class="cut" aria-label="Cut list">
+    <h2>CUT LIST</h2>
+    <p class="note">Removed from the roadmap. Drag a card here to cut it, or move it out with its dropdown.</p>
+    <div class="cut-list" id="cutList" data-lane="cut"></div>
+  </section>
+
+  <footer>Click a card for scores and dependencies. Drag cards between lanes. Value and Effort scores (1 to 5) are relative judgements, not measurements.</footer>
+</div>
+
+<script>
+(function(){
+  var QUADS = {
+    "Quick Win":     {cls:"qw", color:"var(--qw-fg)"},
+    "Major Project": {cls:"mp", color:"var(--mp-fg)"},
+    "Fill-In":       {cls:"fi", color:"var(--fi-fg)"},
+    "Time Sinker":   {cls:"ts", color:"var(--ts-fg)"}
+  };
+  var LANES = [
+    {id:"now",  title:"NOW",   note:"Prerequisites and measurement setup", banner:"These are launch prerequisites and pilot measurement setup, not a commitment to deliver all four in one sprint."},
+    {id:"next", title:"NEXT",  note:"After NOW"},
+    {id:"later",title:"LATER", note:"Backlog"}
+  ];
+
+  var features = [
+    {id:1, name:"Card application and approval flow", lane:"now", value:3, effort:4, quad:"Major Project",
+     role:"Launch prerequisite",
+     deps:["Regulatory","Risk"],
+     why:"No cardholders without it; approval policy needs sign-off and credit checks."},
+    {id:2, name:"Fixed-limit credit with automatic repayment", lane:"now", value:3, effort:5, quad:"Major Project",
+     role:"Launch prerequisite",
+     deps:["Regulatory","Risk"],
+     why:"Defines what paying later means on this card; heaviest build, needing credit policy, scorecards and repayment mechanics."},
+    {id:3, name:"Card issuing and provisioning", lane:"now", value:4, effort:4, quad:"Major Project",
+     role:"Launch prerequisite",
+     deps:["Platform"],
+     why:"No card means no purchase outside partner checkout; competes with the Amazon Business pilot for shared platform capacity."},
+    {id:7, name:"Partner vs non-partner spend tagging and guardrail reporting", lane:"now", value:3, effort:2, quad:"Quick Win",
+     role:"Pilot measurement setup",
+     deps:[],
+     why:"Needed to judge the guardrail and the pilot; mostly data work. Design assumes an eligible holdout group."},
+    {id:6, name:"Guided onboarding and first-use journey", lane:"next", value:3, effort:2, quad:"Quick Win",
+     deps:["Platform","Card events"],
+     why:"Targets activation, the denominator of M3 retention; depends on card events. Effect of prompts on retention is unproven."},
+    {id:9, name:"Card dispute and chargeback handling", lane:"next", value:2, effort:3, quad:"Time Sinker",
+     flag:"Compliance confirmation required before pilot",
+     deps:["Scheme rules","Support ops"],
+     why:"No evidence it affects M3 retention. Whether scheme rules make it mandatory is unconfirmed, so scope is open."},
+    {id:4, name:"In-app card dashboard", lane:"later", value:2, effort:3, quad:"Time Sinker",
+     deps:["Platform"],
+     why:"No evidence that seeing limit and repayment dates drives a Month 3 purchase; needs card data feeds first."},
+    {id:5, name:"Phone-wallet provisioning", lane:"later", value:4, effort:3, quad:"Major Project",
+     deps:["Platform","Scheme"],
+     why:"Targets the in-store and phone-first friction, but the need is an assumption to validate."},
+    {id:10, name:"Pay-after-deciding option", lane:"later", value:4, effort:5, quad:"Major Project",
+     deps:["Regulatory","Risk","Repayment mechanics"],
+     why:"Targets Lena's second friction; value and feasibility are unvalidated and it may conflict with fixed-limit repayment."},
+    {id:8, name:"Partner-merchant card promotions", lane:"cut", value:2, effort:4, quad:"Time Sinker",
+     deps:["Merchant funding","Commercial agreements"],
+     why:"No link to Lena's friction and it needs merchant funding and campaign tooling.",
+     reason:"Cut: no link to the persona's core friction; high effort for low value in a friends-and-family pilot."}
+  ];
+
+  var active = {"Quick Win":true,"Major Project":true,"Fill-In":true,"Time Sinker":true};
+  var openIds = {};
+  var dragId = null;
+
+  var board = document.getElementById("board");
+  var cutList = document.getElementById("cutList");
+  var toolbar = document.getElementById("toolbar");
+
+  /* Filter chips */
+  Object.keys(QUADS).forEach(function(q){
+    var b = document.createElement("button");
+    b.type = "button"; b.className = "chip"; b.setAttribute("aria-pressed","true");
+    b.innerHTML = '<span class="dot" style="background:'+QUADS[q].color+'"></span>'+q;
+    b.addEventListener("click", function(){
+      active[q] = !active[q];
+      b.setAttribute("aria-pressed", active[q] ? "true" : "false");
+      render();
+    });
+    toolbar.appendChild(b);
+  });
+  var rs = document.createElement("button");
+  rs.type="button"; rs.className="reset"; rs.textContent="Show all";
+  rs.addEventListener("click", function(){
+    Object.keys(active).forEach(function(k){active[k]=true;});
+    Array.prototype.forEach.call(toolbar.querySelectorAll(".chip"), function(c){c.setAttribute("aria-pressed","true");});
+    render();
+  });
+  toolbar.appendChild(rs);
+
+  /* Theme */
+  var root = document.documentElement;
+  document.getElementById("themeBtn").addEventListener("click", function(){
+    var cur = root.getAttribute("data-theme");
+    if(!cur){ cur = window.matchMedia("(prefers-color-scheme: dark)").matches ? "dark" : "light"; }
+    root.setAttribute("data-theme", cur === "dark" ? "light" : "dark");
+  });
+
+  function meter(n){
+    var s = '<div class="meter" aria-hidden="true">';
+    for(var i=1;i<=5;i++){ s += '<i class="'+(i<=n?'on':'')+'"></i>'; }
+    return s + '</div>';
+  }
+  function esc(t){ return String(t).replace(/[&<>"]/g, function(c){return {"&":"&amp;","<":"&lt;",">":"&gt;",'"':"&quot;"}[c];}); }
+
+  function cardEl(f){
+    var q = QUADS[f.quad];
+    var el = document.createElement("article");
+    el.className = "card" + (openIds[f.id] ? " open" : "");
+    el.draggable = true;
+    el.dataset.id = f.id;
+
+    var tags = (f.role ? '<span class="tag role">'+esc(f.role)+'</span>' : '') + f.deps.map(function(d){return '<span class="tag">'+esc(d)+'</span>';}).join("");
+    var opts = [["now","Now"],["next","Next"],["later","Later"],["cut","Cut list"]].map(function(o){
+      return '<option value="'+o[0]+'"'+(o[0]===f.lane?' selected':'')+'>'+o[1]+'</option>';
+    }).join("");
+
+    el.innerHTML =
+      '<div class="card-top">' +
+        '<h3 class="card-name"><span class="num">#'+f.id+'</span>'+esc(f.name)+'</h3>' +
+        '<span class="badge '+q.cls+'">'+f.quad+'</span>' +
+      '</div>' +
+      '<p class="rationale">'+esc(f.why)+'</p>' +
+      (f.flag ? '<p class="flag">'+esc(f.flag)+'</p>' : '') +
+      (f.lane==="cut" && f.reason ? '<p class="reason">'+esc(f.reason)+'</p>' : '') +
+      '<div class="card-foot">' +
+        '<div class="tags">'+tags+'</div>' +
+        '<button type="button" class="more" aria-expanded="'+(!!openIds[f.id])+'">'+(openIds[f.id]?'Hide details':'Details')+'</button>' +
+      '</div>' +
+      '<div class="detail">' +
+        '<div class="scores">' +
+          '<div class="score"><div class="k">Value '+f.value+'/5</div>'+meter(f.value)+'</div>' +
+          '<div class="score"><div class="k">Effort '+f.effort+'/5</div>'+meter(f.effort)+'</div>' +
+        '</div>' +
+        '<div class="move"><label for="mv'+f.id+'">Move to</label><select id="mv'+f.id+'">'+opts+'</select></div>' +
+      '</div>';
+
+    el.querySelector(".more").addEventListener("click", function(){
+      openIds[f.id] = !openIds[f.id];
+      render();
+    });
+    el.querySelector("select").addEventListener("change", function(e){
+      f.lane = e.target.value;
+      if(f.lane === "cut" && !f.reason){ f.reason = "Cut: removed from the roadmap during review."; }
+      render();
+    });
+    el.addEventListener("dragstart", function(e){
+      dragId = f.id; el.classList.add("dragging");
+      try{ e.dataTransfer.setData("text/plain", String(f.id)); e.dataTransfer.effectAllowed = "move"; }catch(_){}
+    });
+    el.addEventListener("dragend", function(){ dragId = null; el.classList.remove("dragging"); clearOver(); });
+    return el;
+  }
+
+  function clearOver(){
+    Array.prototype.forEach.call(document.querySelectorAll(".over"), function(n){n.classList.remove("over");});
+  }
+  function wireDrop(node, laneId){
+    node.addEventListener("dragover", function(e){ e.preventDefault(); node.classList.add("over"); });
+    node.addEventListener("dragleave", function(e){ if(!node.contains(e.relatedTarget)) node.classList.remove("over"); });
+    node.addEventListener("drop", function(e){
+      e.preventDefault(); node.classList.remove("over");
+      var f = features.filter(function(x){return x.id===dragId;})[0];
+      if(!f) return;
+      f.lane = laneId;
+      if(laneId === "cut" && !f.reason){ f.reason = "Cut: removed from the roadmap during review."; }
+      render();
+    });
+  }
+
+  function render(){
+    board.innerHTML = "";
+    LANES.forEach(function(l){
+      var items = features.filter(function(f){return f.lane===l.id;});
+      var shown = items.filter(function(f){return active[f.quad];});
+      var lane = document.createElement("section");
+      lane.className = "lane"; lane.dataset.lane = l.id;
+      lane.setAttribute("aria-label", l.title+" lane");
+      lane.innerHTML =
+        '<div class="lane-head"><div><span class="lane-title">'+l.title+'</span><span class="count">'+items.length+'</span></div>' +
+        '<span class="lane-note">'+l.note+'</span></div>';
+      if(l.banner){
+        var bn = document.createElement("div"); bn.className = "banner"; bn.textContent = l.banner;
+        lane.appendChild(bn);
+      }
+      var stack = document.createElement("div"); stack.className = "stack";
+      if(shown.length === 0){
+        var e = document.createElement("div"); e.className = "empty";
+        e.textContent = items.length ? "Hidden by filter" : "Drop a card here";
+        stack.appendChild(e);
+      }
+      shown.forEach(function(f){ stack.appendChild(cardEl(f)); });
+      lane.appendChild(stack);
+      wireDrop(lane, l.id);
+      board.appendChild(lane);
+    });
+
+    cutList.innerHTML = "";
+    var cuts = features.filter(function(f){return f.lane==="cut";});
+    var cutsShown = cuts.filter(function(f){return active[f.quad];});
+    if(cutsShown.length === 0){
+      var e2 = document.createElement("div"); e2.className = "empty";
+      e2.textContent = cuts.length ? "Hidden by filter" : "Nothing cut yet";
+      cutList.appendChild(e2);
+    }
+    cutsShown.forEach(function(f){ cutList.appendChild(cardEl(f)); });
+  }
+
+  wireDrop(cutList, "cut");
+  render();
+})();
+</script>
+</body>
+</html>
