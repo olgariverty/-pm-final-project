@@ -9,6 +9,7 @@
 | Persona | Lena, 32, Cologne; design context, not a targeting rule | Case input |
 | Cohort | Eligible, activated, loyal frequent cardholders with a compatible device | Eligibility to define before launch |
 | Primary metric | M3 card retention: at least one Riverty Card purchase in the third 30-day period after randomisation | Defined |
+| In-store diagnostic | At least one in-store card transaction by any method, measured in both arms | Card form to confirm before launch |
 | Baseline | 69% | Synthetic planning benchmark; validate comparability |
 | MDE | +10 percentage points absolute | Proposed |
 | Sample | 301 per arm | Proposed calculator estimate at 80% power / 5% significance |
@@ -34,13 +35,13 @@
 - **Ship:** M3 card retention improves by at least 10 percentage points at p < 0.05 and partner-checkout spend declines by no more than 3% relative to control.
 - **Iterate:** Direction is positive but below the MDE, or provisioning take-up shows correctable setup friction.
 - **Kill:** The primary metric is clearly negative at the final read, or the guardrail is materially breached.
-- **Pause:** Partner-checkout spend is more than 3% below control in two consecutive weekly safety reads, or a material Risk/Compliance incident occurs. The Experiment Owner pauses enrolment with Risk and Compliance.
+- **Pause:** Partner-checkout spend is more than 3% below control in two consecutive weekly safety reads **[minimum data or confidence rule TBD]**, or a material Risk/Compliance incident occurs. A material incident is a confirmed regulatory, customer-harm, fraud, or operational event that Risk/Compliance classifies as requiring a pause. The Experiment Owner pauses enrolment with Risk and Compliance.
 - **Inconclusive:** The confidence interval includes no effect at the planned sample. This is not evidence of equivalence.
 
 ## Readout
 
-The final efficacy read occurs after the last enrolled participant completes Month 3 plus the agreed settlement lag. No early efficacy stopping. Operational and guardrail monitoring may continue throughout.
+The final efficacy read occurs after the last enrolled participant completes days 61–90 plus the agreed settlement lag. No early efficacy stopping. Operational and guardrail monitoring may continue throughout.
 
 ## Pre-launch gates
 
-Confirm wallet/provider support, eligibility, activation and Month 3 definitions, baseline comparability, sample feasibility, Risk/Compliance approval, and Customer Service readiness.
+Confirm wallet/provider support, card form, eligibility, activation and days 61–90 definitions, baseline comparability, sample feasibility, Risk/Compliance approval, and Customer Service readiness.
