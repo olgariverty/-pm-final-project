@@ -17,8 +17,6 @@
 - **Opportunity:** Add one supported phone-wallet route for using an issued Riverty Card in store.
 - **Hypothesis:** Wallet access will increase repeat card use without materially reducing partner-checkout spend.
 
-Planning inputs: 69% synthetic M3 baseline; proposed +10pp MDE; proposed 301 users per arm; synthetic -3% partner-checkout signal informing a proposed boundary.
-
 ## Slide 6 · Research
 
 Lena's relevant moment of misery is lack of Riverty acceptance beyond partner checkout. Phone-wallet provisioning addresses that acceptance gap. Her pay-after-deciding preference remains a separate, untested need.
@@ -51,10 +49,8 @@ Ship at ≥ +10pp and guardrail pass. Iterate below MDE with positive direction.
 **Channels after pass:** in-app card banner, targeted email, push notification.
 **Dashboard:** provisioning completion, in-store wallet usage, M3 retention, partner-checkout spend.
 
-## Slide 10 · Story and ask
-
-**What changed:** Returned to Lena; removed unsupported quantitative claims; eliminated platform and timing assumptions; aligned the feature, cohort, metric, and guardrail.
-
-**Aha:** The strongest product story is one causal bet with an explicit downside boundary.
+## Slide 10 · Decision requested
 
 **Decision requested:** Approve a controlled beta subject to wallet-provider, Risk, and Compliance readiness. Scale only if M3 retention improves by the agreed threshold and partner-checkout spend stays within the agreed boundary.
+
+**Before launch:** Confirm provider and scheme support; validate cohort, baseline, and sample feasibility; secure Risk, Compliance, and Support readiness.
