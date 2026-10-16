@@ -2,7 +2,7 @@
 
 > Product School · Product Management Certification · Final Project
 
-- **Authors:** Olga Knjazeva and Zülfikar Atasoy
+- **Team:** Group 5 · Cohort 1
 - **Market:** Germany
 - **Repository:** https://github.com/olgariverty/-pm-final-project
 - **Status:** Canonical combined project
