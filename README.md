@@ -1,52 +1,36 @@
-# Riverty Wallet-Ready Instant Card
+# Riverty Wallet-Ready Card
 
-> Product School · Product Management Certification · Final Project
+**Product School · Product Management Certification · Final Project**
+**Group 5 · Cohort 1**
 
-- **Team:** Group 5 · Cohort 1
-- **Market:** Germany
 - **Repository:** https://github.com/olgariverty/-pm-final-project
-- **Status:** Canonical combined project
+- **Prototype:** https://req-pilot.lovable.app/
+- **Market:** Germany
+- **Evidence note:** Persona facts come from the assigned case. Quantitative inputs are synthetic and directional unless labelled as proposed decisions.
 
 ## One-line pitch
 
-Make the Riverty Card available in a supported phone wallet immediately after approval, creating earlier in-store access and sustained card usage without weakening partner checkout.
+Test whether phone-wallet access creates durable Riverty Card usage beyond partner checkout without weakening Riverty's merchant-first business.
 
-## Product bet
+## Executive summary
 
-Frequent shoppers switch between payment methods because Riverty is available mainly through partner checkout. We are testing whether immediate wallet provisioning after card approval creates sustained repeat usage. Month 3 card retention is the primary metric; partner-checkout spend protects the merchant-first business.
+Riverty reaches consumers mainly when a partner merchant offers it at checkout. Lena, a frequent mobile BNPL user, therefore falls back to Klarna, PayPal, or an existing bank card whenever Riverty is unavailable.
 
-## Decision framework
+This project proposes a controlled friends-and-family beta of **phone-wallet provisioning**. Eligible, activated Riverty cardholders in the variant can add their issued card to one supported phone wallet; the control group keeps the same card experience without wallet provisioning during the experiment.
 
-- **Ship:** Month 3 retention improves by at least the proposed 10 percentage points at p < 0.05 and the partner-checkout guardrail holds.
-- **Iterate:** Direction is positive but below the MDE, the mechanism is weak, or the guardrail is inconclusive.
-- **Kill:** No improvement or a negative primary result at full readout.
-- **Pause:** Partner-checkout spend breaches the proposed 3% boundary in two consecutive monitoring periods, or a material operational risk occurs.
+The primary decision metric is **M3 card retention**. The experiment protects **partner-checkout spend per randomised participant** with a proposed 3% relative downside boundary.
 
-## Evidence boundaries
+## Decision requested
 
-All user-research references and quantitative figures are synthetic and directional. The 69% baseline, +10 percentage-point MDE, 301 users per arm, 3% guardrail boundary, and supported wallet are planning inputs requiring validation before launch.
+Approve a controlled beta, subject to wallet-provider, Risk, and Compliance readiness. Scale from an S-tier beta to a targeted M-tier rollout only if M3 card retention improves by at least the proposed 10 percentage points and the partner-checkout guardrail holds.
 
-## Deliverables
+## Repository structure
 
-| Module | Deliverable | File |
-|---|---|---|
-| M1 | Strategic discovery map | `01-product-thinking/strategic-map.md` |
-| M1 | Problem hook and value proposition | `01-product-thinking/problem-hook.md` |
-| M2 | Product-health synthesis | `02-discovery/ai-synthesis.md` |
-| M2 | Competitive analysis and journey | `02-discovery/competitive-and-journey.md` |
-| M2 | Journey map | `01-product-thinking/riverty-card-journey-map.md` |
-| M3 | Hypothesis and success metrics | `03-analytics/hypothesis-and-metrics.md` |
-| M4 | Roadmap, PRD and prototype | `04-roadmap/roadmap-prd-prototype.md` |
-| M4 | PRD and prototype sprint | `04-roadmap/prd-and-prototype.md` |
-| M4 | Interactive roadmap | `04-roadmap/riverty-card-roadmap.html` |
-| M5 | Experimentation plan | `05-experimentation/experimentation-plan.md` |
-| M6 | GTM strategy and dashboard | `06-launch/gtm-and-dashboard.md` |
-| M6 | Individual insights | `06-launch/individual-insights.md` |
-| M6 | Final presentation source | `06-launch/final-presentation.md` |
-| M6 | Final HTML deck | `06-launch/final-presentation.html` |
+- `01-product-thinking/` — problem, strategy, and journey
+- `02-discovery/` — persona, alternatives, and evidence boundaries
+- `03-analytics/` — hypothesis and metrics
+- `04-roadmap/` — roadmap, PRD, and prototype
+- `05-experimentation/` — A/B experiment brief
+- `06-launch/` — GTM plan, insights, and final presentation
 
-## Prototype
-
-[Open the current prototype](https://req-pilot.lovable.app/)
-
-The current prototype is retained as the platform-agnostic base. It validates flow comprehension and recovery states only. It does not execute real wallet provisioning or payments and does not validate retention or business impact. A later iteration will add the approval entry point and make the timing difference—immediate availability versus after physical-card arrival—explicit.
+Open `06-launch/final-presentation.html` for the executive deck.
