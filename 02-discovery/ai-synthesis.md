@@ -1,19 +1,18 @@
-# AI Synthesis — Product Health & Insights Summary (Module 2)
+# Discovery Synthesis
 
-## Moments of misery
+## Confirmed case inputs
 
-1. Nadine re-decides how to pay at each checkout because acceptance varies by merchant.
-2. In store, Riverty is unavailable unless she can use an issued card through a supported wallet or physical card.
-3. After purchase, using several providers makes it harder to remember which method was used.
+1. Lena is a frequent mobile BNPL user who uses whichever payment option appears at checkout.
+2. Riverty is unavailable where partner merchants do not offer it.
+3. Lena's workaround is Klarna, PayPal, or an existing debit or credit card.
+4. Riverty must build a direct consumer relationship without undermining its merchant-first model.
 
-## Product health and opportunity
+## Product opportunity
 
-Synthetic research suggests that payment fragmentation is common and that Riverty is often chosen because of availability rather than preference. A consumer card could extend Riverty beyond partner checkout, but availability alone does not prove customer value or loyalty. The smallest useful test is immediate phone-wallet provisioning for newly approved cardholders, paired with a guardrail on partner-checkout spend.
+Phone-wallet provisioning can make an issued Riverty Card usable in more in-store payment moments. The proposition is a hypothesis, not a confirmed customer need.
 
-## Critical review of the AI output
+## Evidence boundaries
 
-- **What it captured:** The link between fragmented payment behaviour, limited acceptance, and Riverty's weak direct relationship.
-- **What it initially smoothed over:** The difference between a recurring behaviour and a severe customer pain.
-- **Logic leak corrected:** Universal acceptance does not automatically create preference or retention.
-- **Logic leak corrected:** Wallet provisioning does not solve repayment-timing needs; it tests whether earlier in-store availability changes sustained card usage.
-- **PM intervention:** Narrow the solution to one supported wallet, use observable Riverty metrics, and define a merchant-checkout guardrail before launch.
+- The 69% M3 retention figure is a synthetic planning benchmark, not observed Riverty performance.
+- The 3% partner-checkout signal is synthetic and informs a proposed guardrail; it is not an approved business threshold.
+- Pay-after-deciding is a separate need and remains outside the wallet experiment.

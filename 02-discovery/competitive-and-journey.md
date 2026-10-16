@@ -1,44 +1,35 @@
-# Competitive Analysis & Journey Map (Module 2)
+# Competitive Analysis and Journey
 
 ## Persona
 
-**Nadine, 38 — the fragmentation-weary shopper.** She is a frequent online shopper who uses three or more payment methods each month.
+**Lena, 32, Cologne** is a frequent BNPL user who shops mainly on her phone. She uses whichever payment option is available and rarely seeks out Riverty.
 
-## Goal
+## Goal and friction
 
-Use one consistent payment method online and in store, with fewer decisions about which provider works where.
+- **Goal:** Use a flexible payment method while staying in control of payment timing.
+- **Relevant friction for this project:** Riverty cannot be used outside partner checkout.
+- **Workaround:** Klarna, PayPal, or an existing debit or credit card.
+- **Scope boundary:** Wallet provisioning expands acceptance; it does not itself provide pay-after-deciding.
 
-## Friction
+## Competitive alternatives
 
-At a checkout or in a store, Nadine has to remember which payment method is accepted and switch when Riverty is unavailable. Later, she may not recall whether she paid through Riverty, Klarna, PayPal, or her bank.
-
-## Current workaround
-
-She relies on memory and uses whichever option is available: Klarna or PayPal when offered, otherwise an existing debit or credit card.
-
-## Evidence
-
-Synthetic research signals include: "I don't need another credit card. I need fewer payment decisions" and "having to remember which one works where." These are directional inputs, not observed Riverty research.
-
-## Competitive landscape
-
-| Alternative | Why Nadine uses it | Riverty implication |
+| Alternative | Why it wins the moment | Riverty implication |
 |---|---|---|
-| Klarna | Familiar BNPL option with broader consumer visibility | Riverty must compete on availability and habit, not only financing |
-| PayPal | Already carried by many users and available across merchants | A Riverty card must be easier to reach and reuse |
-| Existing debit or credit card | Reliable fallback online and in store | The card must earn a place in an existing wallet |
-| Other instalment cards | Combine broader acceptance with payment flexibility | Riverty must validate differentiation before scaling |
-| Do nothing | Accept whatever the merchant offers | Riverty remains dependent on partner checkout |
+| Klarna | Familiar BNPL option when offered | Riverty needs a route beyond its own partner checkout |
+| PayPal | Broad online availability and remembered account | Convenience and reach matter alongside financing |
+| Debit or credit card | Works across many online and in-store merchants | The Riverty Card must earn repeat use, not merely exist |
+| Do nothing | User accepts whichever option appears | Riverty remains dependent on merchant placement |
 
 ## Future-state journey
 
-1. **Approve:** Nadine is approved and sees that her Riverty Card is ready.
-2. **Provision:** She adds it to one supported phone wallet immediately, with a clear success state or recovery step.
-3. **Use:** She pays online or in store without depending on Riverty being listed at checkout.
-4. **Repeat:** Riverty measures whether early availability creates sustained Month 3 usage.
+1. **Activate:** an eligible user activates the issued Riverty Card.
+2. **Provision:** the variant can add the card to one supported phone wallet.
+3. **Use:** the user makes an in-store wallet transaction at a compatible terminal.
+4. **Repeat:** the user makes at least one Riverty Card purchase in Month 3.
 
-## Evidence boundaries
+## Research questions
 
-- Nadine is the design persona, not the targeting rule.
-- The experiment tests whether immediate wallet availability changes behaviour; it does not assume the card becomes her default.
-- Repayment flexibility and pay-after-deciding are separate needs and outside this feature's scope.
+- Does wallet provisioning complete successfully?
+- Does it create in-store card usage?
+- Does card use persist into Month 3?
+- Does partner-checkout spend remain within the proposed guardrail?
