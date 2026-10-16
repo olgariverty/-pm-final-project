@@ -1,28 +1,30 @@
-# Lena's Pilot Journey: Notice to Reflect
+# Nadine's Journey: Approval to Repeat Use
 
-**Persona (case fact):** Lena, 32, Cologne. Middling salary, no real cushion. Shops mostly on her phone, uses BNPL for most non-trivial purchases, takes whichever provider appears at checkout. Knows Riverty, doesn't prefer it.
-**Goal (case fact):** Money leaves her account only after she has decided to keep an item.
-**Strategy:** Restore and curate, read as a small learning pilot, not proven product capability.
+**Design persona:** Nadine, 38, a frequent shopper who uses three or more payment methods and wants fewer payment decisions.
 
-**Legend:** 🔵 **CASE FACT** = from the Riverty brief  |  🟡 *HYPOTHESIS* = to validate in the pilot
+**Experiment cohort:** Newly approved frequent Riverty users in Germany with an issued card and a device compatible with the selected pilot wallet. Nadine informs the design; she is not the targeting rule.
 
-| | **1. NOTICE** | **2. JOIN** | **3. USE** | **4. REFLECT** |
+**Goal:** Use one consistent payment method online and in store without checking which provider each merchant accepts.
+
+| Stage | User action | Current friction | Proposed experience | What we learn |
 |---|---|---|---|---|
-| 🟡 *User action* | *Receives a pilot invite* | *Joins the pilot, with optional personal support (pilot hypothesis)* | *Tries the card in everyday purchases* | *Shares feedback and usage* |
-| 🟡 *Internal state* | *Open, but unsure why she would prefer Riverty* | *Unsure about credit checks, limits and fees* | *Unknown: easier than current options, or just another card?* | *Unknown: does she feel in control of when money leaves?* |
-| 🔵 **Pain point addressed** | **Takes whichever provider appears; Riverty reaches her only at partner checkout** | **Knows Riverty but doesn't prefer it; checkout brand preference is about 6%** | **Riverty is absent from in-store points of sale** | **Wants money to leave her account only after deciding to keep an item** |
-| 🟡 *Action → Benefit* | *Gets invite → we learn if a card prompts interest* | *Joins → we learn her expectations and worries* | *Tries card → we learn where it works and is used* | *Shares feedback → we learn if it meets her need* |
+| **1. Approval** | Receives card approval | A new card adds value only if it is available when intent is highest | Sees that the issued Riverty Card can be used immediately through one supported phone wallet | Whether newly approved users start the provisioning flow |
+| **2. Provisioning** | Adds the card to the wallet | Waiting for a physical card delays in-store availability | Completes secure provisioning with a clear success state or recovery path | Whether the setup flow is understandable and reliable |
+| **3. First use** | Pays online or in store | Riverty is unavailable at many non-partner payment moments | Uses the same issued card without depending on Riverty being listed at checkout | Whether earlier availability accelerates first use and creates in-store usage |
+| **4. Repeat use** | Chooses how to pay in Month 3 | Existing payment methods remain the default habit | Reuses the Riverty Card if it has earned a durable place in the wallet | Whether the feature improves Month 3 card retention |
 
-**Pilot questions:** What value does she expect? Does use add spend without diverting partner checkout? Does she choose Riverty again unprompted?
+## Moment of misery
+
+At a checkout or in a store, Nadine has to remember which payment method works and switch when Riverty is unavailable.
+
+## Current workaround
+
+Use Klarna or PayPal when offered; otherwise fall back to an existing debit or credit card.
 
 ## Evidence boundaries
 
-- **Not assumed:** in-store or everywhere acceptance, a unified balance view, pay-after-deciding, or loyalty. All are open questions.
-- **Pay-after-deciding** is a need to validate against the card's repayment terms, not a promised feature.
-- **Before any live pilot, confirm repayment mechanics and approval requirements with Risk and Compliance.**
-
-## Three potential advantages to test (hypotheses, not outcomes)
-
-1. 🟡 *Test acceptance beyond partner checkout → learn whether in-store use could replace her debit fallback.*
-2. 🟡 *Validate pay-after-deciding as a need, against the card's repayment terms → learn if it fits her core need.*
-3. 🟡 *Test a single balance view → learn whether she can track what she owes without searching her inbox.*
+- The persona and research quotes are synthetic and directional.
+- The experiment tests whether **immediate wallet availability** changes usage; it does not assume Riverty becomes the default card.
+- Phone-wallet provisioning does not solve repayment timing or create new credit terms.
+- The supported wallet must be selected using device mix, technical readiness, provider approval, Compliance requirements, and cost.
+- The visual prototype validates comprehension and recovery states only—not tokenisation, real payments, retention, or business impact.
