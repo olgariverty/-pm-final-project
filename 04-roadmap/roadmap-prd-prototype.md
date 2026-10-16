@@ -1,72 +1,43 @@
-# Roadmap, PRD & Prototype (Module 4)
+# Roadmap, PRD and Prototype
 
 ## Strategic anchors
 
-- **Design persona:** Nadine, the fragmentation-weary shopper.
-- **Experiment cohort:** Newly approved frequent Riverty users with a compatible device.
-- **Primary metric:** Month 3 card retention.
-- **Moment of misery:** Riverty is unavailable at a non-partner checkout or in store, so the user switches payment method.
-- **Guardrail:** Partner-checkout spend per randomised participant must not decline by more than the proposed 3% relative boundary versus control.
+- **Design persona:** Lena, a frequent mobile BNPL user who cannot use Riverty beyond partner checkout.
+- **Experiment cohort:** Eligible, activated, loyal frequent Riverty cardholders with compatible devices.
+- **Primary metric:** M3 card retention.
+- **Guardrail:** Partner-checkout Riverty spend per randomised participant.
 
-## Roadmap
+## Now — make the experiment possible
 
-### Now — prove the core hypothesis
+1. **Card readiness:** validate application, approval, issuing, credit-limit, repayment, and activation dependencies.
+2. **Phone-wallet provisioning:** build one supported-wallet flow with success and recoverable failure states.
+3. **Experiment instrumentation:** randomisation, wallet events, card transactions, Month 3 retention, and partner-checkout guardrail.
 
-1. **Approval and issuing readiness:** Confirm an approved card is active and eligible for wallet tokenisation.
-2. **Wallet-Ready Instant Card:** Offer provisioning to one supported phone wallet immediately after approval.
-3. **Experiment instrumentation:** Measure provisioning, first use, in-store use, Month 3 retention, and partner-checkout spend.
+## Next — improve after evidence
 
-### Next — improve adoption after the readout
+- Second wallet, only if device mix warrants it
+- Guided onboarding and setup content after the experiment
+- In-app card activity view
 
-- First-use guidance and a reminder for users selecting "Not now."
-- A second phone wallet if cohort device mix and technical readiness justify it.
-- Card activity and payment overview improvements.
+## Later — separate hypotheses
 
-### Later
+- Pay-after-deciding, validated against repayment mechanics
+- Rewards or partner propositions
+- Broader market rollout
 
-- Split-it-later or pay-after-deciding propositions, subject to separate customer, Risk, and Compliance validation.
-- Multi-device token management.
-- Rewards or partner-funded benefits only if evidence supports incremental value.
+## Cut from the beta
 
-### Cut from the pilot
+- Partner promotions
+- Multiple wallets
+- Promotional nudges that would contaminate attribution
+- Unvalidated loyalty or pay-after-deciding promises
 
-- Cashback, partner promotions, creator cards, default-card nudges during the experiment, additional credit propositions, and markets outside Germany.
+## PRD highlights
 
-## PRD highlights — Wallet-Ready Instant Card
-
-### Core experience
-
-An approved cardholder can add the issued Riverty Card to one supported phone wallet immediately after approval, before the physical card arrives.
-
-### Must-haves
-
-1. A valid issued card and an eligible, compatible device.
-2. Secure wallet provisioning with required authentication and tokenisation.
-3. A clear provisioning success state.
-4. A clear failure reason, retry option, and support path.
-5. Ability to make an in-store payment at a compatible terminal after successful provisioning.
-6. Card or wallet-token suspension for safety.
-7. Event logging for provisioning, first use, channel, Month 3 retention, and guardrail reporting.
-
-### Isolation and scope protection
-
-The only experiment difference is when wallet provisioning becomes available: immediately after approval versus after physical-card arrival. Card terms, credit policy, issuing, repayment, fraud controls, support, and measurement remain unchanged.
-
-Out of scope: a second wallet, nudges or promotions during the test, instalments, rewards, pricing changes, and expanded wallet functionality.
+The feature is one attributable change: access to phone-wallet provisioning. The prototype covers setup, progress, success, failure, retry, and support. It is platform-agnostic until device mix and provider readiness are confirmed.
 
 ## Prototype
 
-The prototype demonstrates approval, wallet provisioning, success, failure, retry, and support states. It tests flow comprehension and usability only; it does not validate real tokenisation, payment execution, Month 3 retention, or business impact.
+https://req-pilot.lovable.app/
 
-The current prototype illustrates a wallet implementation. The first production platform must be selected using cohort device mix, technical readiness, provider approval, Compliance requirements, and integration cost.
-
-**Prototype:** https://req-pilot.lovable.app/
-
-The current platform-agnostic prototype is the retained base. A later iteration will add the approval entry point and explicitly show the timing difference tested by the experiment.
-
-## What the prototype revealed
-
-- Retry behaviour and progress preservation needed an explicit rule.
-- The happy path is two user actions because success appears automatically.
-- Authentication failure, offline handling, and lockout scope require separate definitions.
-- Several technical and Risk requirements cannot be validated in a visual prototype.
+The prototype is a simulated usability flow; no real card is issued and no payment is processed.

@@ -124,8 +124,8 @@
     <div class="brand">
       <div class="logo">R</div>
       <div>
-        <h1>Riverty Wallet-Ready Instant Card</h1>
-        <div class="sub">Roadmap · prove immediate wallet availability before scaling</div>
+        <h1>Riverty Wallet-Ready Card</h1>
+        <div class="sub">Roadmap · prove durable wallet-enabled usage before scaling</div>
       </div>
     </div>
     <div class="meta">
@@ -157,39 +157,39 @@
     "Time Sinker":   {cls:"ts", color:"var(--ts-fg)"}
   };
   var LANES = [
-    {id:"now",  title:"NOW",   note:"Prove the core hypothesis", banner:"Build only what is required to compare immediate wallet access with access after physical-card arrival."},
+    {id:"now",  title:"NOW",   note:"Prove the core hypothesis", banner:"Build only what is required to compare phone-wallet provisioning with the current card experience."},
     {id:"next", title:"NEXT",  note:"Improve adoption after readout"},
     {id:"later",title:"LATER", note:"Separate product bets"}
   ];
 
   var features = [
-    {id:1, name:"Approval and issuing readiness", lane:"now", value:5, effort:4, quad:"Major Project",
+    {id:1, name:"Card readiness", lane:"now", value:5, effort:4, quad:"Major Project",
      role:"Launch prerequisite",
      deps:["Risk","Compliance","Card processor"],
      why:"An approved card must be active and eligible for secure wallet tokenisation before the experiment can start."},
-    {id:2, name:"Wallet-Ready Instant Card", lane:"now", value:5, effort:3, quad:"Major Project",
+    {id:2, name:"Phone-wallet provisioning", lane:"now", value:5, effort:3, quad:"Major Project",
      role:"Feature under test",
      deps:["Wallet provider","Scheme","Compatible device"],
-     why:"Offers one supported phone wallet immediately after approval, directly testing earlier in-store availability."},
+     why:"Offers one supported phone wallet to eligible activated cardholders, testing in-store access and durable usage."},
     {id:3, name:"Experiment instrumentation", lane:"now", value:5, effort:2, quad:"Quick Win",
      role:"Decision prerequisite",
      deps:["Card events","Partner-checkout data"],
      why:"Measures provisioning, first use, in-store use, Month 3 retention and the partner-checkout guardrail."},
-    {id:4, name:"First-use guidance", lane:"next", value:3, effort:1, quad:"Quick Win",
+    {id:4, name:"Guided onboarding", lane:"next", value:3, effort:1, quad:"Quick Win",
      deps:["Experiment readout"],
      why:"Can address setup or first-use friction after the clean experiment establishes where users drop."},
-    {id:5, name:"Not-now reminder", lane:"next", value:3, effort:1, quad:"Quick Win",
-     deps:["Experiment readout","Lifecycle messaging"],
-     why:"Recovers eligible users after the test; excluded during the experiment to protect attribution."},
+    {id:5, name:"Card activity view", lane:"next", value:3, effort:2, quad:"Fill-In",
+     deps:["Card data feeds","Experiment readout"],
+     why:"May improve control after purchase, but is excluded from the experiment to protect attribution."},
     {id:6, name:"Second supported wallet", lane:"next", value:4, effort:3, quad:"Major Project",
      deps:["Device mix","Provider approval","Integration cost"],
      why:"Expand only if cohort device mix and the first-wallet result justify the additional platform."},
-    {id:7, name:"Card activity overview", lane:"later", value:2, effort:3, quad:"Fill-In",
-     deps:["Card data feeds"],
-     why:"May improve control after purchase, but does not test the immediate-availability hypothesis."},
-    {id:8, name:"Split-it-later proposition", lane:"later", value:4, effort:5, quad:"Major Project",
+    {id:7, name:"Broader market rollout", lane:"later", value:3, effort:4, quad:"Major Project",
+     deps:["Experiment pass","Operational readiness"],
+     why:"Scale only after the wallet-enabled usage hypothesis passes its primary metric and guardrail."},
+    {id:8, name:"Pay-after-deciding proposition", lane:"later", value:4, effort:5, quad:"Major Project",
      deps:["Customer validation","Risk","Compliance"],
-     why:"A separate credit and repayment proposition requiring its own evidence and decision framework."},
+     why:"A separate need from Lena requiring its own credit, repayment, evidence and decision framework."},
     {id:9, name:"Cashback and rewards", lane:"cut", value:2, effort:4, quad:"Time Sinker",
      deps:["Budget","Commercial model"],
      why:"Could mask whether availability itself creates repeat usage.",
