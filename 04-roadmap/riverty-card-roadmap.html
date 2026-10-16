@@ -124,8 +124,8 @@
     <div class="brand">
       <div class="logo">R</div>
       <div>
-        <h1>Riverty Card</h1>
-        <div class="sub">Roadmap · friends-and-family pilot</div>
+        <h1>Riverty Wallet-Ready Instant Card</h1>
+        <div class="sub">Roadmap · prove immediate wallet availability before scaling</div>
       </div>
     </div>
     <div class="meta">
@@ -157,48 +157,47 @@
     "Time Sinker":   {cls:"ts", color:"var(--ts-fg)"}
   };
   var LANES = [
-    {id:"now",  title:"NOW",   note:"Prerequisites and measurement setup", banner:"These are launch prerequisites and pilot measurement setup, not a commitment to deliver all four in one sprint."},
-    {id:"next", title:"NEXT",  note:"After NOW"},
-    {id:"later",title:"LATER", note:"Backlog"}
+    {id:"now",  title:"NOW",   note:"Prove the core hypothesis", banner:"Build only what is required to compare immediate wallet access with access after physical-card arrival."},
+    {id:"next", title:"NEXT",  note:"Improve adoption after readout"},
+    {id:"later",title:"LATER", note:"Separate product bets"}
   ];
 
   var features = [
-    {id:1, name:"Card application and approval flow", lane:"now", value:3, effort:4, quad:"Major Project",
+    {id:1, name:"Approval and issuing readiness", lane:"now", value:5, effort:4, quad:"Major Project",
      role:"Launch prerequisite",
-     deps:["Regulatory","Risk"],
-     why:"No cardholders without it; approval policy needs sign-off and credit checks."},
-    {id:2, name:"Fixed-limit credit with automatic repayment", lane:"now", value:3, effort:5, quad:"Major Project",
-     role:"Launch prerequisite",
-     deps:["Regulatory","Risk"],
-     why:"Defines what paying later means on this card; heaviest build, needing credit policy, scorecards and repayment mechanics."},
-    {id:3, name:"Card issuing and provisioning", lane:"now", value:4, effort:4, quad:"Major Project",
-     role:"Launch prerequisite",
-     deps:["Platform"],
-     why:"No card means no purchase outside partner checkout; competes with the Amazon Business pilot for shared platform capacity."},
-    {id:7, name:"Partner vs non-partner spend tagging and guardrail reporting", lane:"now", value:3, effort:2, quad:"Quick Win",
-     role:"Pilot measurement setup",
-     deps:[],
-     why:"Needed to judge the guardrail and the pilot; mostly data work. Design assumes an eligible holdout group."},
-    {id:6, name:"Guided onboarding and first-use journey", lane:"next", value:3, effort:2, quad:"Quick Win",
-     deps:["Platform","Card events"],
-     why:"Targets activation, the denominator of M3 retention; depends on card events. Effect of prompts on retention is unproven."},
-    {id:9, name:"Card dispute and chargeback handling", lane:"next", value:2, effort:3, quad:"Time Sinker",
-     flag:"Compliance confirmation required before pilot",
-     deps:["Scheme rules","Support ops"],
-     why:"No evidence it affects M3 retention. Whether scheme rules make it mandatory is unconfirmed, so scope is open."},
-    {id:4, name:"In-app card dashboard", lane:"later", value:2, effort:3, quad:"Time Sinker",
-     deps:["Platform"],
-     why:"No evidence that seeing limit and repayment dates drives a Month 3 purchase; needs card data feeds first."},
-    {id:5, name:"Phone-wallet provisioning", lane:"later", value:4, effort:3, quad:"Major Project",
-     deps:["Platform","Scheme"],
-     why:"Targets the in-store and phone-first friction, but the need is an assumption to validate."},
-    {id:10, name:"Pay-after-deciding option", lane:"later", value:4, effort:5, quad:"Major Project",
-     deps:["Regulatory","Risk","Repayment mechanics"],
-     why:"Targets Lena's second friction; value and feasibility are unvalidated and it may conflict with fixed-limit repayment."},
-    {id:8, name:"Partner-merchant card promotions", lane:"cut", value:2, effort:4, quad:"Time Sinker",
+     deps:["Risk","Compliance","Card processor"],
+     why:"An approved card must be active and eligible for secure wallet tokenisation before the experiment can start."},
+    {id:2, name:"Wallet-Ready Instant Card", lane:"now", value:5, effort:3, quad:"Major Project",
+     role:"Feature under test",
+     deps:["Wallet provider","Scheme","Compatible device"],
+     why:"Offers one supported phone wallet immediately after approval, directly testing earlier in-store availability."},
+    {id:3, name:"Experiment instrumentation", lane:"now", value:5, effort:2, quad:"Quick Win",
+     role:"Decision prerequisite",
+     deps:["Card events","Partner-checkout data"],
+     why:"Measures provisioning, first use, in-store use, Month 3 retention and the partner-checkout guardrail."},
+    {id:4, name:"First-use guidance", lane:"next", value:3, effort:1, quad:"Quick Win",
+     deps:["Experiment readout"],
+     why:"Can address setup or first-use friction after the clean experiment establishes where users drop."},
+    {id:5, name:"Not-now reminder", lane:"next", value:3, effort:1, quad:"Quick Win",
+     deps:["Experiment readout","Lifecycle messaging"],
+     why:"Recovers eligible users after the test; excluded during the experiment to protect attribution."},
+    {id:6, name:"Second supported wallet", lane:"next", value:4, effort:3, quad:"Major Project",
+     deps:["Device mix","Provider approval","Integration cost"],
+     why:"Expand only if cohort device mix and the first-wallet result justify the additional platform."},
+    {id:7, name:"Card activity overview", lane:"later", value:2, effort:3, quad:"Fill-In",
+     deps:["Card data feeds"],
+     why:"May improve control after purchase, but does not test the immediate-availability hypothesis."},
+    {id:8, name:"Split-it-later proposition", lane:"later", value:4, effort:5, quad:"Major Project",
+     deps:["Customer validation","Risk","Compliance"],
+     why:"A separate credit and repayment proposition requiring its own evidence and decision framework."},
+    {id:9, name:"Cashback and rewards", lane:"cut", value:2, effort:4, quad:"Time Sinker",
+     deps:["Budget","Commercial model"],
+     why:"Could mask whether availability itself creates repeat usage.",
+     reason:"Cut from the pilot: adds cost and breaks attribution before the core habit hypothesis is proven."},
+    {id:10, name:"Partner promotions", lane:"cut", value:2, effort:4, quad:"Time Sinker",
      deps:["Merchant funding","Commercial agreements"],
-     why:"No link to Lena's friction and it needs merchant funding and campaign tooling.",
-     reason:"Cut: no link to the persona's core friction; high effort for low value in a friends-and-family pilot."}
+     why:"Does not remove the payment-fragmentation problem and could distort the merchant guardrail.",
+     reason:"Cut from the pilot: high coordination cost and no need to prove the core feature."}
   ];
 
   var active = {"Quick Win":true,"Major Project":true,"Fill-In":true,"Time Sinker":true};
