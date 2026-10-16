@@ -4,8 +4,8 @@
 <meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
 <title>Riverty Wallet-Ready Card · Group 5</title>
 <style>
-:root{--bg:#07162c;--fg:#fff;--muted:#c9d4e6;--orange:#fb923c;--cyan:#22d3ee;--green:#34d399;--pink:#f472b6;--violet:#a78bfa;--line:rgba(251,146,60,.28);--card:rgba(255,255,255,.045)}
-*{box-sizing:border-box}html{scroll-snap-type:y mandatory;scroll-behavior:smooth;background:var(--bg)}body{margin:0;background:var(--bg);color:var(--fg);font:15px/1.45 Inter,system-ui,-apple-system,"Segoe UI",sans-serif}section{min-height:100vh;scroll-snap-align:start;padding:5vh 6vw;display:flex;flex-direction:column;justify-content:center;position:relative;overflow:hidden}section:before{content:"";position:absolute;inset:0;pointer-events:none;background:radial-gradient(850px 430px at 90% 0,rgba(251,146,60,.13),transparent 60%),radial-gradient(700px 380px at 0 100%,rgba(34,211,238,.08),transparent 60%)}section>*{position:relative}h1,h2,h3,p{margin-top:0}h1{font-size:clamp(48px,8vw,94px);line-height:.98;letter-spacing:-.035em;margin-bottom:20px}h2{font-size:clamp(30px,4vw,48px);line-height:1.08;letter-spacing:-.02em;margin-bottom:24px}h3{font-size:17px;margin-bottom:6px}.eyebrow,.label{font:600 11px/1.3 ui-monospace,SFMono-Regular,Menlo,monospace;text-transform:uppercase;letter-spacing:.11em;color:#fdba74}.eyebrow{margin-bottom:10px}.sub{font-size:clamp(18px,2.1vw,28px);font-weight:700;max-width:930px}.muted,.note{color:var(--muted)}.note{font-size:12px}.grid{display:grid;gap:14px}.g2{grid-template-columns:repeat(2,minmax(0,1fr))}.g3{grid-template-columns:repeat(3,minmax(0,1fr))}.g4{grid-template-columns:repeat(4,minmax(0,1fr))}.card,.tile,.hero{background:var(--card);border:1px solid var(--line);border-radius:15px;padding:15px 17px}.hero{background:linear-gradient(135deg,rgba(251,146,60,.18),rgba(167,139,250,.09));border-color:rgba(251,146,60,.5);padding:20px}.metric{font:600 clamp(26px,3vw,40px)/1 ui-monospace,SFMono-Regular,Menlo,monospace;margin-bottom:7px}.tag{display:inline-block;border:1px solid;border-radius:999px;padding:2px 8px;font:600 10px/1.4 ui-monospace,SFMono-Regular,Menlo,monospace;text-transform:uppercase;letter-spacing:.06em}.syn{color:var(--violet)}.prop{color:var(--cyan)}.case{color:#60a5fa}.btn{display:inline-block;background:var(--orange);color:var(--bg);font-weight:800;text-decoration:none;border-radius:999px;padding:11px 22px}ul,ol{margin:0;padding-left:20px}li{margin:4px 0}.steps{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:12px}.step{border:1px solid var(--line);background:var(--card);border-radius:14px;padding:14px}.step b{display:block;margin-top:6px}.decision{border-left:4px solid var(--orange);background:rgba(251,146,60,.1);padding:15px 18px;border-radius:0 14px 14px 0}.pill{display:inline-block;border:1px solid var(--line);border-radius:999px;padding:5px 11px;margin:3px;font-size:13px}a{color:inherit}#bar{position:fixed;top:0;left:0;height:3px;background:linear-gradient(90deg,var(--orange),var(--pink));z-index:10}#dots{position:fixed;right:15px;top:50%;transform:translateY(-50%);z-index:9;display:flex;flex-direction:column;gap:9px}#dots a{width:9px;height:9px;border:1px solid #fff;border-radius:50%}#dots a.on{background:var(--orange);border-color:var(--orange)}@media(max-width:850px){.g2,.g3,.g4,.steps{grid-template-columns:1fr}#dots{display:none}section{height:auto;min-height:100vh;overflow:visible}}
+:root{--bg:#07162c;--fg:#fff;--muted:#fff;--orange:#fb923c;--cyan:#22d3ee;--green:#34d399;--pink:#f472b6;--violet:#a78bfa;--line:rgba(251,146,60,.28);--card:rgba(255,255,255,.045);--head:"Saans",Inter,system-ui,-apple-system,"Segoe UI",sans-serif;--mono:"Antarctican Mono",ui-monospace,SFMono-Regular,Menlo,monospace}
+*{box-sizing:border-box}html{scroll-snap-type:y mandatory;scroll-behavior:smooth;background:var(--bg)}body{margin:0;background:var(--bg);color:var(--fg);font:15px/1.45 var(--head)}section{min-height:100vh;scroll-snap-align:start;padding:5vh 6vw;display:flex;flex-direction:column;justify-content:center;position:relative;overflow:hidden}section:before{content:"";position:absolute;inset:0;pointer-events:none;background:radial-gradient(850px 430px at 90% 0,rgba(251,146,60,.13),transparent 60%),radial-gradient(700px 380px at 0 100%,rgba(34,211,238,.08),transparent 60%)}section>*{position:relative}h1,h2,h3,p{margin-top:0}h1{font-size:clamp(48px,8vw,94px);line-height:.98;letter-spacing:-.035em;margin-bottom:20px}h2{font-size:clamp(30px,4vw,48px);line-height:1.08;letter-spacing:-.02em;margin-bottom:24px}h3{font-size:17px;margin-bottom:6px}.eyebrow,.label{font:600 11px/1.3 var(--mono);text-transform:uppercase;letter-spacing:.11em;color:#fdba74}.eyebrow{margin-bottom:10px}.sub{font-size:clamp(18px,2.1vw,28px);font-weight:700;max-width:930px}.muted,.note{color:var(--muted)}.note{font-size:12px}.grid{display:grid;gap:14px}.g2{grid-template-columns:repeat(2,minmax(0,1fr))}.g3{grid-template-columns:repeat(3,minmax(0,1fr))}.g4{grid-template-columns:repeat(4,minmax(0,1fr))}.card,.tile,.hero{background:var(--card);border:1px solid var(--line);border-radius:15px;padding:15px 17px}.hero{background:linear-gradient(135deg,rgba(251,146,60,.18),rgba(167,139,250,.09));border-color:rgba(251,146,60,.5);padding:20px}.metric{font:600 clamp(26px,3vw,40px)/1 var(--mono);margin-bottom:7px}.tag{display:inline-block;border:1px solid;border-radius:999px;padding:2px 8px;font:600 10px/1.4 var(--mono);text-transform:uppercase;letter-spacing:.06em}.syn{color:var(--violet)}.prop{color:var(--cyan)}.case{color:#60a5fa}.btn{display:inline-block;background:var(--orange);color:var(--bg);font-weight:800;text-decoration:none;border-radius:999px;padding:11px 22px}ul,ol{margin:0;padding-left:20px}li{margin:4px 0}.steps{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:12px}.step{border:1px solid var(--line);background:var(--card);border-radius:14px;padding:14px}.step b{display:block;margin-top:6px}.decision{border-left:4px solid var(--orange);background:rgba(251,146,60,.1);padding:15px 18px;border-radius:0 14px 14px 0}.pill{display:inline-block;border:1px solid var(--line);border-radius:999px;padding:5px 11px;margin:3px;font-size:13px}a{color:inherit}#bar{position:fixed;top:0;left:0;height:3px;background:linear-gradient(90deg,var(--orange),var(--pink));z-index:10}#dots{position:fixed;right:15px;top:50%;transform:translateY(-50%);z-index:9;display:flex;flex-direction:column;gap:9px}#dots a{width:9px;height:9px;border:1px solid #fff;border-radius:50%}#dots a.on{background:var(--orange);border-color:var(--orange)}@media(max-width:850px){.g2,.g3,.g4,.steps{grid-template-columns:1fr}#dots{display:none}section{height:auto;min-height:100vh;overflow:visible}}
 </style>
 </head>
 <body><div id="bar"></div><nav id="dots"></nav>
@@ -17,99 +17,123 @@
   <p class="muted">Controlled German pilot · merchant-first guardrail</p>
   <div class="grid g2" style="max-width:900px;margin:16px 0 22px">
     <div class="card"><span class="label">Team</span><h3>Group 5 · Cohort 1</h3></div>
-    <div class="card"><span class="label">Repository</span><a href="https://github.com/olgariverty/-pm-final-project/tree/main">github.com/olgariverty/-pm-final-project</a></div>
+    <div class="card"><span class="label">Repository</span><a href="https://github.com/olgariverty/-pm-final-project/tree/main" target="_blank" rel="noopener">github.com/olgariverty/-pm-final-project</a></div>
   </div>
-  <p><a class="btn" href="https://req-pilot.lovable.app/">View prototype</a> <span class="note">Simulated usability flow; no real payments.</span></p>
+  <p><a class="btn" href="https://req-pilot.lovable.app/" target="_blank" rel="noopener">View prototype</a> <span class="note">Simulated usability flow; no real payments.</span></p>
 </section>
 
 <section id="s2" data-title="Strategy">
   <p class="eyebrow">Slide 5 · Strategy</p>
   <h2>Riverty disappears when partner checkout does</h2>
   <div class="grid g2">
-    <div class="card"><span class="label" style="color:var(--pink)">Customer problem</span><p>Lena uses whichever option is available. Where merchants do not offer Riverty, she falls back to Klarna, PayPal, or a bank card.</p></div>
-    <div class="card"><span class="label" style="color:var(--cyan)">Strategic opportunity</span><p>One supported phone wallet can create an in-store route for an issued Riverty Card—without changing the underlying credit proposition.</p></div>
+    <div class="card"><span class="label" style="color:var(--pink)">Customer problem</span><p>Where merchants do not offer Riverty, Lena uses Klarna, PayPal, or a bank card.</p></div>
+    <div class="card"><span class="label" style="color:var(--cyan)">Strategic opportunity</span><p>One supported phone wallet could create an in-store route for the issued card. Credit terms stay constant; credit design remains an external prerequisite.</p></div>
   </div>
-  <div class="hero" style="margin-top:16px"><span class="label">Causal bet</span><p class="sub" style="font-size:21px;margin:5px 0 0">Wallet provisioning will increase repeat card use beyond partner checkout while the merchant channel remains protected.</p></div>
-  <div class="decision" style="margin-top:16px"><b>Strategic test:</b> Can Riverty build a direct, repeat consumer relationship without weakening its merchant-first channel?</div>
+  <div class="hero" style="margin-top:14px"><span class="label">Hypothesis informed by synthetic planning signals</span><p class="sub" style="font-size:20px;margin:5px 0 0">We believe wallet access can increase repeat card use while protecting partner checkout.</p></div>
+  <div class="grid g3" style="margin-top:12px">
+    <div class="tile"><div class="metric" style="color:var(--green)">6.31% / 69%</div><span class="tag syn">Synthetic</span><p class="note">Loyal-heavy eligible-to-activated conversion / M3 retention</p></div>
+    <div class="tile"><div class="metric" style="color:var(--cyan)">2.19% / 49%</div><span class="tag syn">Synthetic</span><p class="note">Lena-like eligible-to-activated conversion / M3 retention</p></div>
+    <div class="tile"><div class="metric" style="color:var(--pink)">−3%</div><span class="tag syn">Synthetic</span><p class="note">Partner-checkout spend signal</p></div>
+  </div>
+  <p class="note" style="margin-top:10px"><b>Market-entry choice:</b> Lena remains the case persona with no Riverty preference; the pilot targets loyal-heavy cardholders who share her acceptance friction. <b>Cost of waiting:</b> Riverty remains dependent on merchant checkout while Klarna and PayPal remain available.</p>
 </section>
 
 <section id="s3" data-title="Research">
   <p class="eyebrow">Slide 6 · Research</p>
   <h2>Lena's relevant friction is acceptance beyond partner checkout</h2>
-  <div class="grid g3">
+  <div class="grid g4">
     <div class="card"><span class="label">Persona <span class="tag case">Case</span></span><p><b>Lena, 32, Cologne.</b> Frequent BNPL user who shops mainly on her phone.</p></div>
+    <div class="card"><span class="label">Goal <span class="tag case">Case</span></span><p>Pay only after deciding to keep an item.</p></div>
+    <div class="card"><span class="label">Core friction <span class="tag case">Case</span></span><p>Riverty reaches her only where partner merchants offer it.</p></div>
     <div class="card"><span class="label">Workaround <span class="tag case">Case</span></span><p>Klarna, PayPal, or an existing debit or credit card.</p></div>
-    <div class="card"><span class="label">Boundary</span><p>Wallet provisioning expands acceptance. It does not itself solve pay-after-deciding.</p></div>
   </div>
   <div class="steps" style="margin-top:17px">
     <div class="step"><span class="label">1 · Activate</span><b>Enter eligible cohort</b></div>
     <div class="step"><span class="label">2 · Provision</span><b>Add card to wallet</b></div>
     <div class="step" style="border-color:var(--orange)"><span class="label">3 · Use</span><b>Pay in store</b></div>
-    <div class="step"><span class="label">4 · Repeat</span><b>Use card in Month 3</b></div>
+    <div class="step"><span class="label">4 · Repeat</span><b>Use card during days 61–90</b></div>
   </div>
-  <div class="decision" style="margin-top:17px"><b>Evidence discipline:</b> unsupported quantitative claims have been removed. Every number is now labelled as case input, synthetic signal, or proposed decision.</div>
+  <p class="note" style="margin-top:14px"><span class="tag case">Case</span> Assigned-case input &nbsp; <span class="tag syn">Synthetic</span> Directional planning signal &nbsp; <span class="tag prop">Proposed</span> Decision to validate. Scope boundary: wallet provisioning addresses acceptance, not payment timing.</p>
 </section>
 
 <section id="s4" data-title="Blueprint">
   <p class="eyebrow">Slide 7 · Blueprint</p>
   <h2>Build only what the experiment needs</h2>
   <div class="grid g3">
-    <div class="card"><span class="label" style="color:var(--orange)">Now</span><ul><li>Card readiness</li><li>One supported-wallet flow</li><li>Experiment instrumentation</li></ul></div>
+    <div class="card"><span class="label" style="color:var(--orange)">Now</span><ul><li>External prerequisites: application, credit design, issuing and activation</li><li>One supported-wallet flow</li><li>Experiment instrumentation</li></ul></div>
     <div class="card"><span class="label" style="color:var(--cyan)">Next</span><ul><li>Second wallet if device mix warrants</li><li>Guided onboarding</li><li>Card activity view</li></ul></div>
     <div class="card"><span class="label" style="color:var(--violet)">Later / separate bets</span><ul><li>Pay-after-deciding</li><li>Rewards</li><li>Broad rollout</li></ul></div>
   </div>
   <div class="grid g2" style="margin-top:15px">
     <div class="card"><span class="label">PRD must-haves</span><p>Eligibility, secure provisioning, success state, actionable recovery, and event tracking.</p></div>
-    <div class="card"><span class="label">Scope protection</span><p>No platform promise, immediate-issuance claim, new credit terms, multiple wallets, or promotional nudges during the test.</p></div>
+    <div class="card"><span class="label">Scope protection</span><p>Credit terms stay identical between arms. No platform promise, immediate-issuance claim, multiple wallets, or promotional nudges during the test.</p></div>
   </div>
-  <p style="margin-top:18px"><a class="btn" href="https://req-pilot.lovable.app/">Open prototype</a></p>
+  <p class="note" style="margin:12px 0 0"><b>Planning boundary:</b> Now covers prerequisites plus the test build, not a single-sprint commitment.</p>
+  <p style="margin-top:12px"><a class="btn" href="https://req-pilot.lovable.app/" target="_blank" rel="noopener">Open prototype</a> <span class="note">Validates flow usability only—not real payments, retention, or business impact.</span></p>
 </section>
 
 <section id="s5" data-title="Validation">
   <p class="eyebrow">Slide 8 · Validation</p>
   <h2>Will wallet access create durable usage without cannibalising partner checkout?</h2>
   <div class="grid g2">
-    <div class="card"><span class="label" style="color:var(--cyan)">Control A</span><p>Same eligible, activated cardholder and current card experience—without phone-wallet provisioning during the test.</p></div>
-    <div class="card"><span class="label" style="color:var(--orange)">Variant B</span><p>Same cardholder and card experience—plus one supported phone-wallet provisioning flow.</p></div>
+    <div class="card"><span class="label" style="color:var(--cyan)">Control A</span><p>No phone-wallet provisioning during the test.</p></div>
+    <div class="card"><span class="label" style="color:var(--orange)">Variant B</span><p>Same experience plus one supported-wallet flow.</p></div>
   </div>
   <div class="grid g2" style="margin-top:14px">
-    <div class="card"><span class="label" style="color:var(--green)">Primary</span><p><b>M3 card retention:</b> randomised activated cardholders with ≥1 card purchase in the third 30-day period.</p></div>
-    <div class="card"><span class="label" style="color:var(--pink)">Guardrail</span><p><b>Partner-checkout spend per randomised participant:</b> proposed boundary ≤3% below control.</p></div>
+    <div class="card"><span class="label" style="color:var(--green)">Primary + diagnostic</span><p><b>M3:</b> randomised activated cardholders with ≥1 card purchase on days 61–90. <b>In-store:</b> ≥1 card transaction by any method, both arms.</p></div>
+    <div class="card"><span class="label" style="color:var(--pink)">Guardrail</span><p><b>Partner-checkout spend per randomised participant:</b> cumulative days 1–90; zeros included; proposed boundary ≤3% below control. Days 61–90 are a secondary view.</p></div>
   </div>
   <div class="grid g4" style="margin-top:14px">
-    <div class="tile"><div class="metric" style="color:var(--green)">69%</div><span class="tag syn">Synthetic</span><p class="note">M3 planning baseline</p></div>
-    <div class="tile"><div class="metric" style="color:var(--orange)">+10pp</div><span class="tag prop">Proposed</span><p class="note">Minimum detectable lift</p></div>
-    <div class="tile"><div class="metric" style="color:var(--cyan)">301</div><span class="tag prop">Proposed</span><p class="note">Participants per arm</p></div>
-    <div class="tile"><div class="metric" style="color:var(--violet)">3 months</div><span class="tag prop">Proposed</span><p class="note">Per participant</p></div>
+    <div class="tile"><div class="metric" style="color:var(--green)">69%</div><span class="tag syn">Synthetic</span><p class="note">M3 baseline; comparability unconfirmed</p></div>
+    <div class="tile"><div class="metric" style="color:var(--orange)">+10pp</div><span class="tag prop">Proposed</span><p class="note">MDE</p></div>
+    <div class="tile"><div class="metric" style="color:var(--cyan)">301</div><span class="tag prop">Proposed</span><p class="note">Per arm</p></div>
+    <div class="tile"><div class="metric" style="color:var(--violet)">3 months</div><span class="tag prop">Proposed</span><p class="note">Each participant</p></div>
   </div>
-  <div class="decision" style="margin-top:14px"><b>Ship:</b> ≥+10pp, p&lt;.05, guardrail passes · <b>Iterate:</b> positive but below MDE · <b>Kill:</b> no improvement or negative · <b>Pause:</b> guardrail or material risk breach</div>
-  <p class="note" style="margin-top:8px">50/50 · 80% power · assumptions validated before launch</p>
+  <div class="decision" style="margin-top:14px"><b>Ship:</b> approved lift, p&lt;.05, guardrail passes. <b>Iterate:</b> positive, below MDE. <b>Inconclusive:</b> CI includes zero; extend or redesign. <b>Kill:</b> clearly negative. <b>Pause:</b> cumulative spend since randomisation is &gt;3% below control in two weekly reads after the minimum-data rule, or a Risk/Compliance-defined incident.</div>
+  <p class="note" style="margin-top:7px"><span class="tag prop">Proposed</span> 50/50 · 80% power · ≈602 activated participants; directional if unattainable.</p>
 </section>
 
 <section id="s6" data-title="Launch">
   <p class="eyebrow">Slide 9 · Launch</p>
   <h2>S beta first. M rollout only after evidence.</h2>
-  <div class="grid g3">
+  <div class="grid g4">
     <div class="card"><span class="label">Goal</span><h3>Engagement</h3><p>Deepen repeat card use beyond partner checkout.</p></div>
+    <div class="card"><span class="label">Launch tier</span><p><b>S beta</b> → <b>M targeted rollout</b> only after evidence.</p></div>
     <div class="card"><span class="label">Audience</span><p>Eligible, activated, loyal frequent German cardholders with compatible devices.</p></div>
     <div class="card"><span class="label">Channels after pass</span><p><span class="pill">In-app</span><span class="pill">Email</span><span class="pill">Push</span></p></div>
   </div>
-  <div class="grid g3" style="margin-top:15px">
+  <div class="grid g2" style="margin-top:15px">
     <div class="tile"><h3>Provisioning completion</h3><p class="note">Diagnoses setup friction</p></div>
-    <div class="tile"><h3>In-store wallet use</h3><p class="note">Confirms relevant use</p></div>
     <div class="tile"><h3>M3 card retention</h3><p class="note">Governs scale decision</p></div>
   </div>
-  <div class="decision" style="margin-top:16px"><b>Bad signal:</b> card usage rises while partner-checkout spend falls beyond the agreed boundary—growth would be cannibalising the merchant channel.</div>
+  <p class="note" style="margin:8px 0 0"><b>In-store card use:</b> see Validation.</p>
+  <div class="grid g2" style="margin-top:14px">
+    <div class="card"><span class="label">Beta communication</span><p>In-product feature exposure only; control users remain uncommunicated to protect attribution.</p></div>
+    <div class="card"><span class="label">Accountability and gaps</span><p><b>Owners:</b> Card PM, Engineering Lead, Lifecycle Marketing, Operations Lead, Data Analyst. <b>Gaps:</b> CS training, wallet certification, dashboard readiness.</p></div>
+  </div>
+  <p class="note" style="margin-top:10px"><b>Bad signal:</b> card usage rises while partner-checkout spend falls beyond the approved boundary.</p>
 </section>
 
 <section id="s7" data-title="Decision">
   <p class="eyebrow">Slide 10 · Decision requested</p>
   <h1 style="font-size:clamp(42px,7vw,82px)">Approve the controlled beta</h1>
-  <p class="sub">Subject to wallet-provider, Risk, and Compliance readiness.</p>
-  <div class="decision" style="max-width:980px;margin:16px 0 24px"><b>Scale only if</b> M3 card retention improves by the agreed threshold and partner-checkout spend stays within the agreed boundary.</div>
-  <div class="card" style="max-width:980px;margin-bottom:18px"><span class="label" style="color:var(--cyan)">Before launch</span><p>Confirm provider and scheme support · Validate cohort, baseline, and sample feasibility · Secure Risk, Compliance, and Support readiness</p></div>
-  <div class="grid g2" style="max-width:900px"><div class="card"><span class="label">Team</span><h3>Group 5 · Cohort 1</h3></div><div class="card"><span class="label">Repository</span><a href="https://github.com/olgariverty/-pm-final-project/tree/main">github.com/olgariverty/-pm-final-project</a></div></div>
+  <p class="sub">Decision today: approve subject to feasibility review; return to this forum.</p>
+  <div class="decision" style="max-width:980px;margin:16px 0 24px"><b>Scale only if</b> M3 retention reaches the approved lift threshold and partner-checkout spend stays within the approved boundary.</div>
+  <div class="grid g4" style="max-width:1100px">
+    <div class="card"><span class="label">Beta scope</span><p>≈602 activated participants. Card PM + Risk freeze eligibility before enrolment; directional if unattainable.</p></div>
+    <div class="card"><span class="label">Timing</span><p>3 months each. Card PM sets dates and forum after feasibility review.</p></div>
+    <div class="card"><span class="label">Decision owners</span><p>Card PM owns launch; Card PM + Risk/Compliance own pauses. Data + Finance approve thresholds. Data + Risk set the minimum-data rule.</p></div>
+    <div class="card"><span class="label">Proposed owners · to be confirmed</span><p>Card PM: card form. Finance: gross/net + returns. Engineering: wallet/scheme. Card Operations: application/issuing/activation. Credit Risk: credit design. Risk/Compliance: gate. CS: training.</p></div>
+  </div>
+  <p class="note" style="max-width:1100px;margin:12px 0 0"><b>Protection:</b> Merchants get a guardrail and stop rule. Risk/Compliance controls the gate and defines incidents. Support trains before exposure.</p>
 </section>
 
-<script>(function(){var s=[].slice.call(document.querySelectorAll('section')),d=document.getElementById('dots'),b=document.getElementById('bar');s.forEach(function(x){var a=document.createElement('a');a.href='#'+x.id;a.title=x.dataset.title;d.appendChild(a)});function u(){var m=document.documentElement.scrollHeight-innerHeight;b.style.width=(m?scrollY/m*100:0)+'%';var y=scrollY+innerHeight/2,i=0;s.forEach(function(x,j){if(x.offsetTop<=y)i=j});[].forEach.call(d.children,function(x,j){x.classList.toggle('on',i===j)})}addEventListener('scroll',u,{passive:true});addEventListener('resize',u);u()})();</script>
+<section id="s8" data-title="Submit">
+  <p class="eyebrow">Thank you</p>
+  <h1 style="font-size:clamp(42px,7vw,82px)">Ready for the decision.</h1>
+  <div class="grid g2" style="max-width:900px;margin-top:20px"><div class="card"><span class="label">Team</span><h3>Group 5 · Cohort 1</h3></div><div class="card"><span class="label">Repository</span><a href="https://github.com/olgariverty/-pm-final-project/tree/main" target="_blank" rel="noopener">github.com/olgariverty/-pm-final-project</a></div></div>
+  <p style="margin-top:22px"><a class="btn" href="https://req-pilot.lovable.app/" target="_blank" rel="noopener">View prototype</a> <span class="pill">Submit to the learning platform</span></p>
+</section>
+
+<script>(function(){var s=[].slice.call(document.querySelectorAll('section')),d=document.getElementById('dots'),b=document.getElementById('bar');s.forEach(function(x){var a=document.createElement('a');a.href='#'+x.id;a.title=x.dataset.title;a.setAttribute('aria-label',x.dataset.title);d.appendChild(a)});function current(){var y=scrollY+innerHeight/2,i=0;s.forEach(function(x,j){if(x.offsetTop<=y)i=j});return i}function go(i){i=Math.max(0,Math.min(s.length-1,i));s[i].scrollIntoView({behavior:'smooth',block:'start'})}function u(){var m=document.documentElement.scrollHeight-innerHeight;b.style.width=(m?scrollY/m*100:0)+'%';var i=current();[].forEach.call(d.children,function(x,j){x.classList.toggle('on',i===j)})}addEventListener('scroll',u,{passive:true});addEventListener('resize',u);addEventListener('keydown',function(e){if(e.metaKey||e.ctrlKey||e.altKey)return;var k=e.key;if(k==='ArrowDown'||k==='PageDown'||(k===' '&&!e.shiftKey)){e.preventDefault();go(current()+1)}else if(k==='ArrowUp'||k==='PageUp'||(k===' '&&e.shiftKey)){e.preventDefault();go(current()-1)}else if(k==='Home'){e.preventDefault();go(0)}else if(k==='End'){e.preventDefault();go(s.length-1)}else if(k==='Escape'){e.preventDefault();go(0)}});u()})();</script>
 </body></html>
