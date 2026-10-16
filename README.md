@@ -1,58 +1,52 @@
-# My Product: Product Management Final Project
+# Riverty Wallet-Ready Instant Card
 
-> My final project for Product School's **Product Management** certification. One product concept, **StreamLine Spotlight** or **RouteLogic Velocity** (or my own initiative), taken from a raw problem to a launch-ready concept across six in-class labs, no homework required.
+> Product School · Product Management Certification · Final Project
 
-This is a **template repo**. Click **Use this template → Create a new repository**, name it something like `pm-final-project`, and fill in one folder per module as you go. This is an **individual project**: your work is yours alone.
+- **Authors:** Olga Knjazeva and Zülfikar Atasoy
+- **Market:** Germany
+- **Repository:** https://github.com/olgariverty/-pm-final-project
+- **Status:** Canonical combined project
 
----
+## One-line pitch
 
-## Deliverables at a glance
+Make the Riverty Card available in a supported phone wallet immediately after approval, creating earlier in-store access and sustained card usage without weakening partner checkout.
 
-| # | Deliverable | Module | Status | File |
-|---|---|---|---|---|
-| 1 | **Strategic Discovery Map** (groundwork) | M1 | ☐ | `01-product-thinking/strategic-map.md` |
-| 1 | **Problem Hook & Value Proposition** (+ hypothesis) | M1 | ☐ | `01-product-thinking/problem-hook.md` |
-| 2 | **AI Synthesis** — Product Health & Insights Summary | M2 | ☐ | `02-discovery/ai-synthesis.md` |
-| 2 | **Competitive Analysis & Journey Map** | M2 | ☐ | `02-discovery/competitive-and-journey.md` |
-| 3 | **Hypothesis & Success Metrics** | M3 | ☐ | `03-analytics/hypothesis-and-metrics.md` |
-| 4 | **Roadmap, PRD & Prototype** | M4 | ☐ | `04-roadmap/roadmap-prd-prototype.md` |
-| 4 | **PRD & Prototype Sprint** | M4 | ☐ | `04-roadmap/prd-and-prototype.md` |
-| 5 | **Experimentation Plan** | M5 | ☐ | `05-experimentation/experimentation-plan.md` |
-| 6 | **GTM Strategy & Success Dashboard** | M6 | ☐ | `06-launch/gtm-and-dashboard.md` |
-| 6 | **Individual Insights** (reflection) | M6 | ☐ | `06-launch/individual-insights.md` |
-| ★ | **Final Project Presentation** (the deck you submit) | M6 | ☐ | `06-launch/final-presentation.md` |
+## Product bet
 
-## The project in one sentence
+Frequent shoppers switch between payment methods because Riverty is available mainly through partner checkout. We are testing whether immediate wallet provisioning after card approval creates sustained repeat usage. Month 3 card retention is the primary metric; partner-checkout spend protects the merchant-first business.
 
-_What is your product concept, who is it for, and what's the single bet you're making?_
+## Decision framework
 
-___
+- **Ship:** Month 3 retention improves by at least the proposed 10 percentage points at p < 0.05 and the partner-checkout guardrail holds.
+- **Iterate:** Direction is positive but below the MDE, the mechanism is weak, or the guardrail is inconclusive.
+- **Kill:** No improvement or a negative primary result at full readout.
+- **Pause:** Partner-checkout spend breaches the proposed 3% boundary in two consecutive monitoring periods, or a material operational risk occurs.
 
-## How to submit
+## Evidence boundaries
 
-- Turn the deliverable files into your final deck: run the **Final Presentation Generator** (linked from the Module 6 deck) to build a single-file HTML deck, or paste your files into an AI tool like **Gamma** or **Canva** (see `06-launch/final-presentation.md`).
-- Commit the deck to this repo, then submit your **repo link** and your **presentation deck** to the learning platform within **7 days** of your cohort ending.
+All user-research references and quantitative figures are synthetic and directional. The 69% baseline, +10 percentage-point MDE, 301 users per arm, 3% guardrail boundary, and supported wallet are planning inputs requiring validation before launch.
 
-## Repo structure
+## Deliverables
 
-```
-pm-final-project/
-├── README.md                              ← this dashboard
-├── 01-product-thinking/
-│   ├── strategic-map.md                   ← M1 lab 1: strategic discovery map
-│   └── problem-hook.md                    ← M1 lab 2: problem hook + value prop ★ Deliverable 1
-├── 02-discovery/
-│   ├── ai-synthesis.md                    ← M2 lab 1: product health & insights summary
-│   └── competitive-and-journey.md         ← M2 lab 2: workaround + journey map ★ Deliverable 2
-├── 03-analytics/
-│   └── hypothesis-and-metrics.md          ← M3: hypothesis + success metrics ★ Deliverable 3
-├── 04-roadmap/
-│   ├── roadmap-prd-prototype.md           ← M4 lab 1: roadmap + prioritization ★ Deliverable 4
-│   └── prd-and-prototype.md               ← M4 lab 2: PRD + prototype
-├── 05-experimentation/
-│   └── experimentation-plan.md            ← M5: experimentation plan          ★ Deliverable 5
-└── 06-launch/
-    ├── gtm-and-dashboard.md               ← M6: GTM plan + success dashboard  ★ Deliverable 6
-    ├── individual-insights.md             ← M6: friction, learnings, aha
-    └── final-presentation.md              ← M6: how to build & submit the deck ★ Final submission
-```
+| Module | Deliverable | File |
+|---|---|---|
+| M1 | Strategic discovery map | `01-product-thinking/strategic-map.md` |
+| M1 | Problem hook and value proposition | `01-product-thinking/problem-hook.md` |
+| M2 | Product-health synthesis | `02-discovery/ai-synthesis.md` |
+| M2 | Competitive analysis and journey | `02-discovery/competitive-and-journey.md` |
+| M2 | Journey map | `01-product-thinking/riverty-card-journey-map.md` |
+| M3 | Hypothesis and success metrics | `03-analytics/hypothesis-and-metrics.md` |
+| M4 | Roadmap, PRD and prototype | `04-roadmap/roadmap-prd-prototype.md` |
+| M4 | PRD and prototype sprint | `04-roadmap/prd-and-prototype.md` |
+| M4 | Interactive roadmap | `04-roadmap/riverty-card-roadmap.html` |
+| M5 | Experimentation plan | `05-experimentation/experimentation-plan.md` |
+| M6 | GTM strategy and dashboard | `06-launch/gtm-and-dashboard.md` |
+| M6 | Individual insights | `06-launch/individual-insights.md` |
+| M6 | Final presentation source | `06-launch/final-presentation.md` |
+| M6 | Final HTML deck | `06-launch/final-presentation.html` |
+
+## Prototype
+
+[Open the current prototype](https://req-pilot.lovable.app/)
+
+The current prototype is retained as the platform-agnostic base. It validates flow comprehension and recovery states only. It does not execute real wallet provisioning or payments and does not validate retention or business impact. A later iteration will add the approval entry point and make the timing difference—immediate availability versus after physical-card arrival—explicit.
