@@ -1,28 +1,57 @@
 # Hypothesis & Success Metrics (Module 3)
 
-## Pre-work · Hypothesis check
-- **Role , who you are solving for (from M2):** Lena, 32, Cologne, a frequent BNPL user who shopos mainly on her phone.
-- **Goal , what this user is ultimately trying to achieve:** Delay payment until she has decided to keep an item.
-- **Friction / moment of misery , the specific pain blocking their goal:** Lena uses whichever payments option appears at checkout. she knows Riverty, but does not prefer it or actively look for it. Riverty is also unavailable where partner merchants do not offer it.
-- **Current workaround , the external tool or manual process they rely on (M2):** Use Klarna, PayPal when offered, or pay with an existing debit or credit card.
-- **Problem Hook , your one-sentence framing of the business crisis (M1):** Rivertys reliance on partner checkout limits its presence in everyday payments and leaves frequent users undermoetized. A consumer card could address this,provided it strenghtens rather than undermines merchant relations.
-- **Value Proposition , the outcome your initiative promised to deliver (M1):** Extend Riverty into everyday online and in-store payments, while preserving the payment flexibility users value and complementing partner checkout. This is a proposition to validate, not a confirmed user need,
+## Hypothesis check
 
-## Read your data snapshots
-- **Does the funnel data confirm your M2 friction point, or does it tell a different story? Note where the numbers align with the qualitative pain you found and where they diverge.:** _(not filled in)_
-- **Do the retention patterns align with the workaround your M2 persona used to find content? Note what the Mo. 0→1 drop suggests about the onboarding experience your persona described as frustrating.:** _(not filled in)_
-- **Does the LTV gap and the content mix (61% trending for Wanderers) confirm the moment of misery your persona described? Note which segment your persona is in and whether the data confirms their pain.:** _(not filled in)_
-- **Does the low adoption confirm your persona is burdened by tools they don’t use? Note whether the low scheduling adoption (42%) for coordinators matches your M2 moment of misery.:** _(not filled in)_
-- **Does the workflow data match the manual process or hack you documented in M2? Note whether the specific drop-offs or time gaps explain why your persona avoids the digital tool.:** _(not filled in)_
-- **Look at the CSAT heatmap. Which specific cell most directly maps to your persona’s friction? Note how the NPS trend justifies the urgency of your M1 Problem Hook.:** _(not filled in)_
+- **Design persona:** Nadine, 38, a frequent shopper who uses three or more payment methods and wants fewer payment decisions.
+- **Experiment cohort:** Newly approved frequent Riverty users in Germany with an issued card and a device compatible with the selected pilot wallet.
+- **Goal:** Build repeat card usage beyond partner checkout.
+- **Friction:** Riverty is unavailable at many non-partner and in-store payment moments, forcing users to switch methods.
+- **Current workaround:** Klarna, PayPal, or an existing debit or credit card.
+- **Value proposition:** Make the approved Riverty Card available immediately through one supported phone wallet.
 
-## Step 3 · Craft your hypothesis
-- **Qualitative evidence (from M2) , quote the specific friction / moment of misery for your persona:** Lena (case persona) prefers money to leave her account only after she has decided to keep the item. She uses whichever option appears at checkout and rarely seeks out Riverty.
-- **Quantitative evidence (from M3) , name the metric or data point that confirms the pain; cite the number:** Loyal heavy users (segment to check with) show 6.31% eligible to activated conversion and 69% M3 retention, versus 2.19% and 49% for Lena like users. Partner checkout spend is 3% lower versus matched non-card users.
-- **Persona , role, goal, and the friction you confirmed in the reconciliation steps:** Lena, 32, Cologne, a salaried consumer on a middling income, with no real financial cushion, who shops mainly on her phone and uses BNPL for most non-trivial purchases.
-- **Problem you are solving , one sentence describing the specific friction this initiative removes:** Frequent riverty users can only use riverty where partner merchants offer it. Card hypothesis is the broader acceptance could make Riverty useful in more everyday payment moments.
-- **Strategic outcome , what behaviour change do you expect, and how does it map to retention / revenue / churn?:** Buil a direct, everyday consumer relationships and grow usage and monetisationwithou undermining Rivertys merchant first strategy
-- **Primary success metric (initiative signal) , the leading indicator that tells you the gap is closing:** M3 transaction retention among loyal heavy users, synthetic benchmark 69%.
-- **Guardrail metric (product signal) , the metric that must NOT drop; it protects your existing base:** Partner checkout Riverty spend, monitor the synthtic 3% signal for loyal heavy users.
-- **Decision window , how much time or data before you scale, pivot, or kill? minimum threshold to proceed?:** After three months of transaction data in the friends and family test.
-- **Draft your full hypothesis sentence , one to three sentences; quote the metric, name the persona, name the outcome:** Based on the case evidence that loyal Riverty users are underserved and the synthetic snapshots showing higher eligible-to-activated conversion (6.31%) and M3 transaction retention (69%) among loyal heavy users, I believe that prioritising this segment for the Riverty Card will build repeat usage beyond partner checkout. I will measure success by M3 transaction retention among activated loyal heavy users, using 69% as a synthetic benchmark, and monitor partner-checkout Riverty spend versus matched non-card users as a guardrail. I will review the results after the first three months of the friends-and-family test.
+## Evidence reconciliation
+
+### Qualitative evidence
+
+Synthetic research indicates that some frequent shoppers experience payment fragmentation as repeated decision-making and memory burden.
+
+### Quantitative evidence
+
+- 78% use three or more payment methods — **synthetic directional signal**.
+- Riverty is selected 6% of the time when competing beside Klarna or PayPal — **synthetic directional signal**.
+- 69% Month 3 retention among a synthetic loyal-heavy cohort — **planning benchmark whose comparability to the experiment cohort must be validated**.
+- A 3% reduction in partner-checkout spend among synthetic card users — **risk signal, not an approved tolerance**.
+
+## Experiment hypothesis
+
+We believe that offering newly approved frequent Riverty users immediate provisioning of their issued card to one supported phone wallet will increase repeat card usage beyond partner checkout. We will measure success through Month 3 card retention and protect partner-checkout spend throughout the test.
+
+## Metrics
+
+### Primary success metric
+
+**Month 3 card retention:** the percentage of randomised approved cardholders with at least one Riverty Card purchase during their Month 3 observation window.
+
+### Mechanism metrics
+
+- Wallet-provisioning completion rate.
+- Share of randomised cardholders making their first card purchase within 14 days.
+- Share of randomised cardholders making at least one in-store card purchase.
+
+These explain the mechanism but do not replace the primary decision metric.
+
+### Guardrail
+
+**Partner-checkout Riverty spend per randomised participant**, including participants with zero partner-checkout spend. The proposed boundary is no more than a 3% relative reduction in the variant versus control.
+
+## Planning assumptions
+
+- **Baseline:** 69% synthetic Month 3 retention benchmark; cohort comparability must be checked before launch.
+- **MDE:** +10 percentage points absolute, from 69% to 79% — proposed minimum worthwhile lift.
+- **Sample:** 301 users per arm at 80% power and 5% significance, subject to baseline validation.
+- **Split:** 50/50.
+- **Decision window:** Three months per participant; read after the final enrolled participant completes Month 3.
+
+## Full hypothesis
+
+> We believe that offering newly approved frequent Riverty users immediate provisioning of their issued card to one supported phone wallet will increase Month 3 card retention by at least 10 percentage points, from a synthetic planning baseline of 69%, by enabling in-store use before the physical card arrives. We will protect partner-checkout Riverty spend per randomised participant, with a proposed tolerance of no more than a 3% relative reduction versus control.
