@@ -4,11 +4,10 @@
 
 **One-line pitch:** Make the Riverty Card available in a supported phone wallet immediately after approval, creating earlier in-store access and sustained card usage without weakening partner checkout.
 
-## Authors
+## Team
 
-- Olga Knjazeva
-- Zülfikar Atasoy
-- Product School · Product Management Certification · Cohort 1
+- Group 5 · Cohort 1
+- Product School · Product Management Certification
 
 ## Executive story
 
