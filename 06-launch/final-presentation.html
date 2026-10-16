@@ -1,329 +1,128 @@
 <!doctype html>
 <html lang="en">
 <head>
-<meta charset="utf-8">
-<meta name="viewport" content="width=device-width, initial-scale=1">
-<title>Riverty Wallet-Ready Instant Card · Final Project</title>
-<link rel="preconnect" href="https://fonts.googleapis.com">
-<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700;800;900&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
+<meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Riverty Wallet-Ready Card · Group 5</title>
 <style>
-  :root{
-    --bg:#07162C; --fg:#ffffff; --muted:#ffffff;
-    --orange:#fb923c; --cyan:#22d3ee; --teal:#34d399; --blue:#60a5fa; --violet:#a78bfa; --pink:#f472b6;
-    --eyebrow:#fdba74;
-    --line:rgba(251,146,60,0.25);
-    --card:rgba(255,255,255,0.04);
-    --head:"Saans","Inter",system-ui,-apple-system,"Segoe UI",Roboto,Helvetica,Arial,sans-serif;
-    --body:"Saans","Inter",system-ui,-apple-system,"Segoe UI",Roboto,Helvetica,Arial,sans-serif;
-    --mono:"Antarctican Mono","JetBrains Mono",ui-monospace,SFMono-Regular,Menlo,Consolas,monospace;
-  }
-  *{box-sizing:border-box}
-  html{scroll-snap-type:y mandatory;scroll-behavior:smooth;background:var(--bg)}
-  body{margin:0;background:var(--bg);color:var(--fg);font-family:var(--body);font-weight:400;line-height:1.45;-webkit-font-smoothing:antialiased}
-  a{color:inherit}
-  section{min-height:100vh;scroll-snap-align:start;padding:clamp(28px,5vh,56px) clamp(24px,6vw,96px) clamp(28px,5vh,48px);display:flex;flex-direction:column;justify-content:center;position:relative;overflow:hidden}
-  section::before{content:"";position:absolute;inset:0;pointer-events:none;background:radial-gradient(900px 420px at 88% -8%,rgba(251,146,60,.12),transparent 60%),radial-gradient(700px 380px at -6% 108%,rgba(34,211,238,.08),transparent 60%)}
-  section>*{position:relative}
-  .eyebrow{font-family:var(--mono);font-weight:500;font-size:12px;text-transform:uppercase;letter-spacing:.12em;color:var(--eyebrow);margin:0 0 8px}
-  h1,h2,h3{font-family:var(--head);margin:0}
-  h1{font-weight:900;font-size:clamp(44px,8vw,96px);line-height:1;letter-spacing:-.02em}
-  h2{font-weight:800;font-size:clamp(28px,3.6vw,44px);line-height:1.08;letter-spacing:-.01em;margin-bottom:clamp(14px,2.4vh,24px)}
-  h3{font-weight:700;font-size:15px;margin-bottom:6px}
-  p{margin:0 0 8px;font-size:clamp(13px,1.15vw,15.5px)}
-  .muted{opacity:.78}
-  .lbl{font-family:var(--mono);font-weight:500;font-size:11px;text-transform:uppercase;letter-spacing:.1em;margin:0 0 5px;display:block}
-  .card{background:var(--card);border:1px solid var(--line);border-radius:14px;padding:14px 16px}
-  .hero{background:linear-gradient(135deg,rgba(251,146,60,.20),rgba(167,139,250,.10) 60%,rgba(34,211,238,.08));border:1px solid rgba(251,146,60,.45);border-radius:16px;padding:18px 20px;box-shadow:0 18px 44px rgba(0,0,0,.35)}
-  .grid{display:grid;gap:14px}
-  .g2{grid-template-columns:repeat(2,minmax(0,1fr))}
-  .g3{grid-template-columns:repeat(3,minmax(0,1fr))}
-  .g4{grid-template-columns:repeat(4,minmax(0,1fr))}
-  @media (max-width:900px){.g2,.g3,.g4{grid-template-columns:1fr}}
-  .tag{display:inline-block;font-family:var(--mono);font-size:10.5px;letter-spacing:.08em;text-transform:uppercase;border-radius:999px;padding:2px 9px;border:1px solid;white-space:nowrap}
-  .t-syn{color:var(--violet);border-color:rgba(167,139,250,.55);background:rgba(167,139,250,.12)}
-  .t-prop{color:var(--cyan);border-color:rgba(34,211,238,.5);background:rgba(34,211,238,.10)}
-  .t-fact{color:var(--blue);border-color:rgba(96,165,250,.5);background:rgba(96,165,250,.10)}
-  .t-hyp{color:var(--orange);border-color:rgba(251,146,60,.55);background:rgba(251,146,60,.12)}
-  .pill{display:inline-block;border-radius:999px;border:1px solid var(--line);background:rgba(255,255,255,.05);padding:5px 12px;font-size:13px;margin:0 6px 6px 0}
-  .pill.o{border-color:var(--orange);color:var(--orange)}
-  .pill.c{border-color:var(--cyan);color:var(--cyan)}
-  .pill.t{border-color:var(--teal);color:var(--teal)}
-  .btn{display:inline-block;text-decoration:none;font-weight:700;font-size:14px;color:#07162C;background:var(--orange);border-radius:999px;padding:10px 20px;box-shadow:0 8px 24px rgba(251,146,60,.35)}
-  .btn:hover{filter:brightness(1.08)}
-  .ph{font-family:var(--mono);font-size:13px;color:var(--eyebrow);border:1px dashed rgba(251,146,60,.5);border-radius:8px;padding:3px 10px;display:inline-block}
-  ul{margin:0;padding-left:18px}
-  li{font-size:clamp(13px,1.1vw,14.5px);margin-bottom:3px}
-  ol{margin:0;padding-left:20px}
-  .metric{font-family:var(--mono);font-weight:500;font-size:clamp(26px,3vw,38px);line-height:1}
-  .tile{background:var(--card);border:1px solid var(--line);border-radius:14px;padding:12px 14px}
-  .tile .s{font-size:12px;opacity:.78;margin-top:5px}
-  table{width:100%;border-collapse:collapse;font-size:13px}
-  td{padding:6px 8px;border-bottom:1px solid rgba(255,255,255,.08);vertical-align:top}
-  td:first-child{font-family:var(--mono);font-size:11px;text-transform:uppercase;letter-spacing:.06em;color:var(--eyebrow);width:36%}
-  .stage{border-radius:14px;padding:12px 14px;border:1px solid var(--line);background:var(--card)}
-  .stage.pain{border-color:var(--orange);background:linear-gradient(160deg,rgba(251,146,60,.20),rgba(251,146,60,.04));box-shadow:0 0 0 1px rgba(251,146,60,.35),0 14px 36px rgba(251,146,60,.18)}
-  .stage .n{font-family:var(--mono);font-size:11px;color:var(--eyebrow)}
-  .stage h3{font-size:16px}
-  .stage .row{margin-top:7px;font-size:12.5px}
-  .rail{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:12px;position:relative}
-  @media (max-width:900px){.rail{grid-template-columns:1fr}}
-  .col h3{font-family:var(--mono);font-size:12px;letter-spacing:.1em;text-transform:uppercase;margin-bottom:8px}
-  .item{background:var(--card);border:1px solid var(--line);border-radius:12px;padding:9px 11px;margin-bottom:8px;font-size:13px}
-  .item b{font-weight:700}
-  .item small{display:block;opacity:.75;font-size:11.5px;margin-top:2px}
-  .callout{border-left:4px solid var(--orange);background:rgba(251,146,60,.10);border-radius:0 14px 14px 0;padding:12px 16px}
-  .callout.bad{border-left-color:var(--pink);background:rgba(244,114,182,.10)}
-  .note{font-size:12px;opacity:.78}
-  #bar{position:fixed;top:0;left:0;height:3px;width:0;background:linear-gradient(90deg,var(--orange),var(--pink));z-index:50;transition:width .1s}
-  #dots{position:fixed;right:16px;top:50%;transform:translateY(-50%);display:flex;flex-direction:column;gap:10px;z-index:40}
-  #dots a{width:10px;height:10px;border-radius:50%;border:1.5px solid rgba(255,255,255,.55);display:block;transition:all .2s}
-  #dots a.on{background:var(--orange);border-color:var(--orange);transform:scale(1.25)}
-  @media (max-width:700px){#dots{display:none}}
-  .ctr{align-items:flex-start}
+:root{--bg:#07162c;--fg:#fff;--muted:#c9d4e6;--orange:#fb923c;--cyan:#22d3ee;--green:#34d399;--pink:#f472b6;--violet:#a78bfa;--line:rgba(251,146,60,.28);--card:rgba(255,255,255,.045)}
+*{box-sizing:border-box}html{scroll-snap-type:y mandatory;scroll-behavior:smooth;background:var(--bg)}body{margin:0;background:var(--bg);color:var(--fg);font:15px/1.45 Inter,system-ui,-apple-system,"Segoe UI",sans-serif}section{min-height:100vh;scroll-snap-align:start;padding:5vh 6vw;display:flex;flex-direction:column;justify-content:center;position:relative;overflow:hidden}section:before{content:"";position:absolute;inset:0;pointer-events:none;background:radial-gradient(850px 430px at 90% 0,rgba(251,146,60,.13),transparent 60%),radial-gradient(700px 380px at 0 100%,rgba(34,211,238,.08),transparent 60%)}section>*{position:relative}h1,h2,h3,p{margin-top:0}h1{font-size:clamp(48px,8vw,94px);line-height:.98;letter-spacing:-.035em;margin-bottom:20px}h2{font-size:clamp(30px,4vw,48px);line-height:1.08;letter-spacing:-.02em;margin-bottom:24px}h3{font-size:17px;margin-bottom:6px}.eyebrow,.label{font:600 11px/1.3 ui-monospace,SFMono-Regular,Menlo,monospace;text-transform:uppercase;letter-spacing:.11em;color:#fdba74}.eyebrow{margin-bottom:10px}.sub{font-size:clamp(18px,2.1vw,28px);font-weight:700;max-width:930px}.muted,.note{color:var(--muted)}.note{font-size:12px}.grid{display:grid;gap:14px}.g2{grid-template-columns:repeat(2,minmax(0,1fr))}.g3{grid-template-columns:repeat(3,minmax(0,1fr))}.g4{grid-template-columns:repeat(4,minmax(0,1fr))}.card,.tile,.hero{background:var(--card);border:1px solid var(--line);border-radius:15px;padding:15px 17px}.hero{background:linear-gradient(135deg,rgba(251,146,60,.18),rgba(167,139,250,.09));border-color:rgba(251,146,60,.5);padding:20px}.metric{font:600 clamp(26px,3vw,40px)/1 ui-monospace,SFMono-Regular,Menlo,monospace;margin-bottom:7px}.tag{display:inline-block;border:1px solid;border-radius:999px;padding:2px 8px;font:600 10px/1.4 ui-monospace,SFMono-Regular,Menlo,monospace;text-transform:uppercase;letter-spacing:.06em}.syn{color:var(--violet)}.prop{color:var(--cyan)}.case{color:#60a5fa}.btn{display:inline-block;background:var(--orange);color:var(--bg);font-weight:800;text-decoration:none;border-radius:999px;padding:11px 22px}ul,ol{margin:0;padding-left:20px}li{margin:4px 0}.steps{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:12px}.step{border:1px solid var(--line);background:var(--card);border-radius:14px;padding:14px}.step b{display:block;margin-top:6px}.decision{border-left:4px solid var(--orange);background:rgba(251,146,60,.1);padding:15px 18px;border-radius:0 14px 14px 0}.pill{display:inline-block;border:1px solid var(--line);border-radius:999px;padding:5px 11px;margin:3px;font-size:13px}a{color:inherit}#bar{position:fixed;top:0;left:0;height:3px;background:linear-gradient(90deg,var(--orange),var(--pink));z-index:10}#dots{position:fixed;right:15px;top:50%;transform:translateY(-50%);z-index:9;display:flex;flex-direction:column;gap:9px}#dots a{width:9px;height:9px;border:1px solid #fff;border-radius:50%}#dots a.on{background:var(--orange);border-color:var(--orange)}@media(max-width:850px){.g2,.g3,.g4,.steps{grid-template-columns:1fr}#dots{display:none}section{height:auto;min-height:100vh;overflow:visible}}
 </style>
 </head>
-<body>
-<div id="bar"></div>
-<nav id="dots" aria-label="Slides"></nav>
+<body><div id="bar"></div><nav id="dots"></nav>
 
-<!-- 1 COVER -->
 <section id="s1" data-title="Cover">
   <p class="eyebrow">Product School · Product Management · Final Project</p>
-  <h1>Riverty Wallet-Ready<br>Instant Card</h1>
-  <p style="font-size:clamp(20px,2.4vw,32px);font-weight:700;margin:18px 0 8px;max-width:920px;line-height:1.2">Use the Riverty Card in store immediately after approval.</p>
-  <p class="muted" style="margin:0 0 30px;font-size:clamp(15px,1.4vw,19px)">A controlled German pilot that protects partner checkout</p>
-  <div class="grid g2" style="max-width:860px">
-    <div class="card"><span class="lbl" style="color:var(--eyebrow)">Team</span><span style="font-weight:700">Group 5 · Cohort 1</span></div>
-    <div class="card"><span class="lbl" style="color:var(--eyebrow)">Repo</span><a href="https://github.com/olgariverty/-pm-final-project/tree/main" target="_blank" rel="noopener" style="word-break:break-all;font-size:13px">https://github.com/olgariverty/-pm-final-project/tree/main</a></div>
+  <h1>Riverty<br>Wallet-Ready Card</h1>
+  <p class="sub">Test whether phone-wallet access creates durable card usage beyond partner checkout.</p>
+  <p class="muted">Controlled German pilot · merchant-first guardrail</p>
+  <div class="grid g2" style="max-width:900px;margin:16px 0 22px">
+    <div class="card"><span class="label">Team</span><h3>Group 5 · Cohort 1</h3></div>
+    <div class="card"><span class="label">Repository</span><a href="https://github.com/olgariverty/-pm-final-project/tree/main">github.com/olgariverty/-pm-final-project</a></div>
   </div>
-  <p style="margin-top:24px"><a class="btn" href="https://req-pilot.lovable.app/" target="_blank" rel="noopener">View prototype</a>
-  <span class="note" style="margin-left:12px">Simulated usability flow; no real payments.</span></p>
+  <p><a class="btn" href="https://req-pilot.lovable.app/">View prototype</a> <span class="note">Simulated usability flow; no real payments.</span></p>
 </section>
 
-<!-- 2 STRATEGY -->
 <section id="s2" data-title="Strategy">
   <p class="eyebrow">Slide 5 · Strategy</p>
-  <h2>Riverty loses the everyday payment habit when customers must switch methods</h2>
+  <h2>Riverty disappears when partner checkout does</h2>
   <div class="grid g2">
-    <div class="card">
-      <span class="lbl" style="color:var(--pink)">Customer problem</span>
-      <p style="margin:0">Nadine uses several payment methods and must remember which one works at each merchant.</p>
-    </div>
-    <div class="card">
-      <span class="lbl" style="color:var(--cyan)">Strategic opportunity</span>
-      <p style="margin:0">Immediate wallet access can extend Riverty beyond partner checkout before the physical card arrives.</p>
-    </div>
+    <div class="card"><span class="label" style="color:var(--pink)">Customer problem</span><p>Lena uses whichever option is available. Where merchants do not offer Riverty, she falls back to Klarna, PayPal, or a bank card.</p></div>
+    <div class="card"><span class="label" style="color:var(--cyan)">Strategic opportunity</span><p>One supported phone wallet can create an in-store route for an issued Riverty Card—without changing the underlying credit proposition.</p></div>
   </div>
-  <div class="hero" style="margin-top:16px">
-    <span class="lbl" style="color:var(--eyebrow)">Key hypothesis</span>
-    <p style="margin:0;font-size:clamp(16px,1.6vw,21px);font-weight:700;line-height:1.3">Offer one supported phone wallet at approval. Scale only if Month 3 retention improves and partner checkout remains protected.</p>
-  </div>
+  <div class="hero" style="margin-top:16px"><span class="label">Causal bet</span><p class="sub" style="font-size:21px;margin:5px 0 0">Wallet provisioning will increase repeat card use beyond partner checkout while the merchant channel remains protected.</p></div>
   <div class="grid g4" style="margin-top:16px">
-    <div class="tile"><div class="metric" style="color:var(--orange)">78%</div><div class="s">Use three or more payment methods</div></div>
-    <div class="tile"><div class="metric" style="color:var(--cyan)">6%</div><div class="s">Choose Riverty when alternatives appear</div></div>
-    <div class="tile"><div class="metric" style="color:var(--teal)">69%</div><div class="s">Month 3 planning baseline</div></div>
-    <div class="tile"><div class="metric" style="color:var(--pink)">−3%</div><div class="s">Partner-checkout risk signal</div></div>
+    <div class="tile"><div class="metric" style="color:var(--green)">69%</div><span class="tag syn">Synthetic</span><p class="note">M3 planning baseline</p></div>
+    <div class="tile"><div class="metric" style="color:var(--orange)">+10pp</div><span class="tag prop">Proposed</span><p class="note">Minimum detectable lift</p></div>
+    <div class="tile"><div class="metric" style="color:var(--cyan)">301</div><span class="tag prop">Proposed</span><p class="note">Participants per arm</p></div>
+    <div class="tile"><div class="metric" style="color:var(--pink)">−3%</div><span class="tag syn">Synthetic signal</span><p class="note">Informs proposed guardrail</p></div>
   </div>
-  <p class="note" style="margin:10px 0 0"><span class="tag t-syn">Synthetic</span> Planning signals, not observed Riverty data.</p>
 </section>
 
-<!-- 3 RESEARCH -->
 <section id="s3" data-title="Research">
   <p class="eyebrow">Slide 6 · Research</p>
-  <h2>Nadine wants fewer payment decisions across online and in-store purchases</h2>
+  <h2>Lena's relevant friction is acceptance beyond partner checkout</h2>
   <div class="grid g3">
-    <div class="card"><span class="lbl" style="color:var(--orange)">Persona and goal</span>
-      <p style="margin:0">Nadine, 38. A frequent shopper using three or more payment methods.</p></div>
-    <div class="card"><span class="lbl" style="color:var(--cyan)">Current workaround</span>
-      <p style="margin:0">She relies on memory, then uses Klarna, PayPal or an existing card.</p></div>
-    <div class="card"><span class="lbl" style="color:var(--pink)">Core friction</span>
-      <p style="margin:0">Riverty disappears when a merchant does not offer it at checkout.</p></div>
+    <div class="card"><span class="label">Persona <span class="tag case">Case</span></span><p><b>Lena, 32, Cologne.</b> Frequent BNPL user who shops mainly on her phone.</p></div>
+    <div class="card"><span class="label">Workaround <span class="tag case">Case</span></span><p>Klarna, PayPal, or an existing debit or credit card.</p></div>
+    <div class="card"><span class="label">Boundary</span><p>Wallet provisioning expands acceptance. It does not itself solve pay-after-deciding.</p></div>
   </div>
-  <div style="margin-top:16px">
-    <span class="lbl" style="color:var(--eyebrow)">Simplified journey</span>
-    <div class="rail">
-      <div class="stage"><div class="n">1 · APPROVAL</div><div class="row"><b>The issued card becomes available</b></div></div>
-      <div class="stage"><div class="n">2 · PROVISION</div><div class="row"><b>Add to one supported wallet</b></div></div>
-      <div class="stage pain"><div class="n">3 · FIRST USE <span class="tag t-hyp" style="margin-left:6px">Core test</span></div><div class="row"><b>Pay without checking merchant support</b></div></div>
-      <div class="stage"><div class="n">4 · REPEAT</div><div class="row"><b>Measure use again in Month 3</b></div></div>
-    </div>
+  <div class="steps" style="margin-top:17px">
+    <div class="step"><span class="label">1 · Activate</span><b>Enter eligible cohort</b></div>
+    <div class="step"><span class="label">2 · Provision</span><b>Add card to wallet</b></div>
+    <div class="step" style="border-color:var(--orange)"><span class="label">3 · Use</span><b>Pay in store</b></div>
+    <div class="step"><span class="label">4 · Repeat</span><b>Use card in Month 3</b></div>
   </div>
-  <div class="grid g2" style="margin-top:16px">
-    <div class="card"><span class="lbl" style="color:var(--teal)">The pilot must answer</span>
-      <ol>
-        <li>Does earlier availability accelerate first use?</li>
-        <li>Does usage persist into Month 3?</li>
-        <li>Does partner checkout remain stable?</li>
-      </ol></div>
-    <div class="callout"><span class="lbl" style="color:var(--orange)">Boundary</span>
-      <p style="margin:0">The test covers availability and repeat use. It does not introduce new credit or repayment terms.</p></div>
-  </div>
+  <div class="decision" style="margin-top:17px"><b>Evidence discipline:</b> unsupported quantitative claims have been removed. Every number is now labelled as case input, synthetic signal, or proposed decision.</div>
 </section>
 
-<!-- 4 BLUEPRINT -->
 <section id="s4" data-title="Blueprint">
   <p class="eyebrow">Slide 7 · Blueprint</p>
-  <h2>The roadmap protects one attributable product bet</h2>
+  <h2>Build only what the experiment needs</h2>
   <div class="grid g3">
-    <div class="col"><h3 style="color:var(--orange)">Now</h3>
-      <div class="item" style="border-color:var(--orange)"><b>Approval and issuing readiness</b></div>
-      <div class="item"><b>Wallet-Ready Instant Card</b></div>
-      <div class="item"><b>Experiment instrumentation</b></div></div>
-    <div class="col"><h3 style="color:var(--cyan)">Next</h3>
-      <div class="item"><b>First-use guidance</b></div>
-      <div class="item"><b>Not-now reminder</b></div>
-      <div class="item"><b>Second wallet</b><small>Only if device mix and evidence justify it</small></div></div>
-    <div class="col"><h3 style="color:var(--violet)">Later</h3>
-      <div class="item"><b>Card activity overview</b></div>
-      <div class="item"><b>Split-it-later proposition</b></div>
-      <div class="item"><b>Rewards and promotions</b></div></div>
+    <div class="card"><span class="label" style="color:var(--orange)">Now</span><ul><li>Card readiness</li><li>One supported-wallet flow</li><li>Experiment instrumentation</li></ul></div>
+    <div class="card"><span class="label" style="color:var(--cyan)">Next</span><ul><li>Second wallet if device mix warrants</li><li>Guided onboarding</li><li>Card activity view</li></ul></div>
+    <div class="card"><span class="label" style="color:var(--violet)">Later / separate bets</span><ul><li>Pay-after-deciding</li><li>Rewards</li><li>Broad rollout</li></ul></div>
   </div>
-  <div class="grid g2" style="margin-top:6px">
-    <div class="card"><span class="lbl" style="color:var(--eyebrow)">PRD must-haves</span>
-      <ul>
-        <li>Start directly from card approval.</li>
-        <li>Add the issued card to one supported wallet.</li>
-        <li>Complete an in-store payment with clear recovery states.</li>
-      </ul></div>
-    <div class="card"><span class="lbl" style="color:var(--teal)">Prototype</span>
-      <p style="margin-bottom:12px">Validates flow usability only; not real payments, retention or business impact.</p>
-      <a class="btn" href="https://req-pilot.lovable.app/" target="_blank" rel="noopener">View prototype</a></div>
+  <div class="grid g2" style="margin-top:15px">
+    <div class="card"><span class="label">PRD must-haves</span><p>Eligibility, secure provisioning, success state, actionable recovery, and event tracking.</p></div>
+    <div class="card"><span class="label">Scope protection</span><p>No platform promise, immediate-issuance claim, new credit terms, multiple wallets, or promotional nudges during the test.</p></div>
   </div>
-  <div class="callout" style="margin-top:14px"><p style="margin:0"><b>Held out of the pilot:</b> a second wallet, promotions, rewards and new credit propositions.</p></div>
+  <p style="margin-top:18px"><a class="btn" href="https://req-pilot.lovable.app/">Open prototype</a></p>
 </section>
 
-<!-- 5 VALIDATION -->
 <section id="s5" data-title="Validation">
   <p class="eyebrow">Slide 8 · Validation</p>
-  <h2>One timing change tests sustained usage without weakening partner checkout</h2>
+  <h2>One attributable change: wallet access</h2>
   <div class="grid g2">
-    <div class="card"><span class="lbl" style="color:var(--cyan)">Control</span><p style="margin:0">Wallet provisioning becomes available after the physical card arrives.</p></div>
-    <div class="card"><span class="lbl" style="color:var(--orange)">Variant</span><p style="margin:0">The same wallet flow becomes available immediately after approval.</p></div>
-  </div>
-  <div class="grid g2" style="margin-top:12px">
-    <div class="card"><span class="lbl" style="color:var(--teal)">Primary metric</span><p style="margin:0"><b>M3 card retention</b></p></div>
-    <div class="card"><span class="lbl" style="color:var(--pink)">Guardrail</span><p style="margin:0"><b>Partner-checkout spend</b> per randomised participant, no more than 3% relative reduction <span class="tag t-prop">Proposed</span></p></div>
-  </div>
-  <div class="grid g4" style="margin-top:12px">
-    <div class="tile"><div class="metric" style="color:var(--teal)">69%</div><div class="s">Baseline <span class="tag t-syn">Synthetic</span></div></div>
-    <div class="tile"><div class="metric" style="color:var(--orange);font-size:clamp(20px,2.4vw,30px)">+10 pp</div><div class="s">MDE, absolute lift <span class="tag t-prop">Proposed</span></div></div>
-    <div class="tile"><div class="metric" style="color:var(--cyan)">301</div><div class="s">Sample per arm <span class="tag t-prop">Proposed</span></div></div>
-    <div class="tile"><div class="metric" style="color:var(--violet);font-size:clamp(20px,2.4vw,30px)">3 months</div><div class="s">Per participant <span class="tag t-prop">Proposed</span></div></div>
-  </div>
-  <div class="grid g4" style="margin-top:12px">
-    <div class="card" style="border-color:rgba(52,211,153,.5)"><span class="lbl" style="color:var(--teal)">Ship</span><p style="margin:0">10 percentage-point absolute lift, guardrail held.</p></div>
-    <div class="card" style="border-color:rgba(34,211,238,.5)"><span class="lbl" style="color:var(--cyan)">Iterate</span><p style="margin:0">Positive direction, lift below the MDE.</p></div>
-    <div class="card" style="border-color:rgba(244,114,182,.5)"><span class="lbl" style="color:var(--pink)">Kill</span><p style="margin:0">No improvement, or negative.</p></div>
-    <div class="card" style="border-color:rgba(251,146,60,.5)"><span class="lbl" style="color:var(--orange)">Pause</span><p style="margin:0">Guardrail breach twice, or a material operational incident.</p></div>
-  </div>
-  <p class="note" style="margin:10px 0 0">Synthetic baseline; proposed thresholds. Read after all participants have completed their Month 3 observation window.</p>
-</section>
-
-<!-- 6 LAUNCH -->
-<section id="s6" data-title="Launch">
-  <p class="eyebrow">Slide 9 · Launch</p>
-  <h2>Controlled beta first, targeted rollout only after the experiment passes</h2>
-  <div class="grid g3">
-    <div class="card"><span class="lbl" style="color:var(--orange)">Goal</span><p style="margin:0"><b>Engagement</b></p></div>
-    <div class="card"><span class="lbl" style="color:var(--cyan)">Audience</span><p style="margin:0">Newly approved frequent Riverty users with a compatible device</p></div>
-    <div class="card"><span class="lbl" style="color:var(--teal)">Tier</span><p style="margin:0"><b>S beta, then M rollout</b></p></div>
+    <div class="card"><span class="label" style="color:var(--cyan)">Control A</span><p>Same eligible, activated cardholder and current card experience—without phone-wallet provisioning during the test.</p></div>
+    <div class="card"><span class="label" style="color:var(--orange)">Variant B</span><p>Same cardholder and card experience—plus one supported phone-wallet provisioning flow.</p></div>
   </div>
   <div class="grid g2" style="margin-top:14px">
-    <div class="card"><span class="lbl" style="color:var(--violet)">Owned channels</span>
-      <span class="pill o">Approval flow</span><span class="pill c">Email</span><span class="pill t">Push</span></div>
-    <div class="card"><span class="lbl" style="color:var(--eyebrow)">Rollout</span>
-      <span class="pill">Beta</span><span class="pill">Experiment</span><span class="pill">Targeted rollout</span><span class="pill">Monitor</span></div>
+    <div class="card"><span class="label" style="color:var(--green)">Primary</span><p><b>M3 card retention:</b> randomised activated cardholders with ≥1 card purchase in the third 30-day period.</p></div>
+    <div class="card"><span class="label" style="color:var(--pink)">Guardrail</span><p><b>Partner-checkout spend per randomised participant:</b> proposed boundary ≤3% below control.</p></div>
   </div>
-  <span class="lbl" style="color:var(--eyebrow);margin-top:16px">Success metrics</span>
-  <div class="grid g3">
-    <div class="tile"><div class="metric" style="color:var(--orange);font-size:20px">Provisioning completion</div><div class="s">Wallet-provisioning completion rate among eligible cardholders.</div></div>
-    <div class="tile"><div class="metric" style="color:var(--cyan);font-size:20px">First use</div><div class="s">Card purchase within 14 days and at least one in-store transaction.</div></div>
-    <div class="tile"><div class="metric" style="color:var(--teal);font-size:20px">Month 3 retention</div><div class="s">Randomised approved cardholders with at least one card purchase in Month 3.</div></div>
+  <div class="grid g4" style="margin-top:14px">
+    <div class="card"><span class="label" style="color:var(--green)">Ship</span><p>≥+10pp, p&lt;.05; guardrail passes.</p></div>
+    <div class="card"><span class="label" style="color:var(--cyan)">Iterate</span><p>Positive, below MDE, or correctable setup friction.</p></div>
+    <div class="card"><span class="label" style="color:var(--pink)">Kill</span><p>Clearly negative primary or material guardrail breach.</p></div>
+    <div class="card"><span class="label" style="color:var(--orange)">Pause</span><p>Guardrail breaches twice or material risk incident; PM + Risk decide.</p></div>
   </div>
-  <p style="margin:16px 0 4px"><b>Owners:</b> Card PM, Engineering Lead, Lifecycle Marketing, Operations Lead and Data Analyst</p>
-  <p style="margin:0"><b>Approval:</b> Risk and Compliance. <b>Gaps:</b> wallet certification, support capacity and dashboard readiness.</p>
+  <p class="note" style="margin-top:12px">50/50 · 80% power · p&lt;.05 · 3 months per participant · assumptions validated before launch</p>
 </section>
 
-<!-- 7 STORY -->
+<section id="s6" data-title="Launch">
+  <p class="eyebrow">Slide 9 · Launch</p>
+  <h2>S beta first. M rollout only after evidence.</h2>
+  <div class="grid g3">
+    <div class="card"><span class="label">Goal</span><h3>Engagement</h3><p>Deepen repeat card use beyond partner checkout.</p></div>
+    <div class="card"><span class="label">Audience</span><p>Eligible, activated, loyal frequent German cardholders with compatible devices.</p></div>
+    <div class="card"><span class="label">Channels after pass</span><p><span class="pill">In-app</span><span class="pill">Email</span><span class="pill">Push</span></p></div>
+  </div>
+  <div class="grid g3" style="margin-top:15px">
+    <div class="tile"><h3>Provisioning completion</h3><p class="note">Diagnoses setup friction</p></div>
+    <div class="tile"><h3>In-store wallet use</h3><p class="note">Confirms relevant use</p></div>
+    <div class="tile"><h3>M3 card retention</h3><p class="note">Governs scale decision</p></div>
+  </div>
+  <div class="decision" style="margin-top:16px"><b>Bad signal:</b> card usage rises while partner-checkout spend falls beyond the agreed boundary—growth would be cannibalising the merchant channel.</div>
+</section>
+
 <section id="s7" data-title="Story">
   <p class="eyebrow">Slide 10 · Story</p>
-  <h2>Earlier availability matters only if it creates a durable habit</h2>
-  <div class="hero">
-    <span class="lbl" style="color:var(--eyebrow)">Aha moment</span>
-    <p style="margin:0;font-size:clamp(16px,1.6vw,21px);font-weight:700;line-height:1.3">Immediate wallet access earns investment only when Month 3 usage increases and partner-checkout spend remains stable.</p>
+  <h2>The strongest story is one causal bet with an explicit downside boundary</h2>
+  <div class="grid g2">
+    <div class="card"><span class="label" style="color:var(--green)">What changed</span><ol><li>Returned to the assigned persona, Lena.</li><li>Removed unsupported quantitative claims.</li><li>Removed platform and timing assumptions.</li><li>Aligned feature, exposure, metric, and guardrail.</li></ol></div>
+    <div class="card"><span class="label" style="color:var(--cyan)">Before launch</span><ol><li>Confirm provider and scheme support.</li><li>Validate cohort, baseline, and sample feasibility.</li><li>Secure Risk, Compliance, and Support readiness.</li></ol></div>
   </div>
-  <div class="grid g2" style="margin-top:16px">
-    <div class="card">
-      <span class="lbl" style="color:var(--teal)">What changed</span>
-      <ol>
-        <li>Nadine's pain and the feature now describe the same acceptance problem.</li>
-        <li>The primary metric uses data Riverty can observe.</li>
-        <li>The decision rules protect the merchant-first model.</li>
-      </ol>
-    </div>
-    <div class="card">
-      <span class="lbl" style="color:var(--pink)">Next decisions</span>
-      <ol>
-        <li>Validate the cohort, device mix and first wallet.</li>
-        <li>Confirm the baseline, MDE and achievable sample.</li>
-        <li>Complete the usability and operational readiness gates.</li>
-      </ol>
-    </div>
-  </div>
+  <div class="hero" style="margin-top:17px"><span class="label">Aha moment</span><p class="sub" style="font-size:21px;margin:5px 0 0">Convenience is not the outcome. Durable usage is—and only if merchant economics remain protected.</p></div>
 </section>
 
-<!-- 8 THANK YOU -->
-<section id="s8" data-title="Submit">
-  <p class="eyebrow">Thank you</p>
-  <h1 style="font-size:clamp(40px,7vw,84px)">Thank you</h1>
-  <div class="grid g2" style="max-width:860px;margin-top:22px">
-    <div class="card"><span class="lbl" style="color:var(--eyebrow)">Repo</span><a href="https://github.com/olgariverty/-pm-final-project/tree/main" target="_blank" rel="noopener" style="word-break:break-all;font-size:13px">https://github.com/olgariverty/-pm-final-project/tree/main</a></div>
-    <div class="card"><span class="lbl" style="color:var(--eyebrow)">Team</span><span style="font-weight:700">Group 5 · Cohort 1</span></div>
-  </div>
-  <p style="margin-top:24px"><span class="pill o" style="font-weight:700;font-size:15px;padding:9px 18px">Submit to the learning platform</span></p>
+<section id="s8" data-title="Decision">
+  <p class="eyebrow">Decision requested</p>
+  <h1 style="font-size:clamp(42px,7vw,82px)">Approve the controlled beta</h1>
+  <p class="sub">Subject to wallet-provider, Risk, and Compliance readiness.</p>
+  <div class="decision" style="max-width:980px;margin:16px 0 24px"><b>Scale only if</b> M3 card retention improves by the agreed threshold and partner-checkout spend stays within the agreed boundary.</div>
+  <div class="grid g2" style="max-width:900px"><div class="card"><span class="label">Team</span><h3>Group 5 · Cohort 1</h3></div><div class="card"><span class="label">Repository</span><a href="https://github.com/olgariverty/-pm-final-project/tree/main">github.com/olgariverty/-pm-final-project</a></div></div>
 </section>
 
-<script>
-(function(){
-  var secs = Array.prototype.slice.call(document.querySelectorAll("section"));
-  var dots = document.getElementById("dots");
-  var bar = document.getElementById("bar");
-  secs.forEach(function(s,i){
-    var a = document.createElement("a");
-    a.href = "#"+s.id; a.title = s.getAttribute("data-title") || ("Slide "+(i+1));
-    a.setAttribute("aria-label", a.title);
-    dots.appendChild(a);
-  });
-  var dotEls = dots.querySelectorAll("a");
-  function current(){
-    var y = window.scrollY + window.innerHeight/2, idx = 0;
-    secs.forEach(function(s,i){ if(s.offsetTop <= y) idx = i; });
-    return idx;
-  }
-  function update(){
-    var max = document.documentElement.scrollHeight - window.innerHeight;
-    bar.style.width = (max>0 ? (window.scrollY/max)*100 : 0) + "%";
-    var c = current();
-    dotEls.forEach(function(d,i){ d.classList.toggle("on", i===c); });
-  }
-  function go(i){
-    i = Math.max(0, Math.min(secs.length-1, i));
-    secs[i].scrollIntoView({behavior:"smooth", block:"start"});
-  }
-  window.addEventListener("scroll", update, {passive:true});
-  window.addEventListener("resize", update);
-  document.addEventListener("keydown", function(e){
-    var k = e.key;
-    if(e.metaKey || e.ctrlKey || e.altKey) return;
-    if(k==="ArrowDown" || (k===" " && !e.shiftKey) || k==="PageDown"){ e.preventDefault(); go(current()+1); }
-    else if(k==="ArrowUp" || (k===" " && e.shiftKey) || k==="PageUp"){ e.preventDefault(); go(current()-1); }
-    else if(k==="Home"){ e.preventDefault(); go(0); }
-    else if(k==="End"){ e.preventDefault(); go(secs.length-1); }
-    else if(k==="Escape"){ go(0); }
-  });
-  update();
-})();
-</script>
-</body>
-</html>
+<script>(function(){var s=[].slice.call(document.querySelectorAll('section')),d=document.getElementById('dots'),b=document.getElementById('bar');s.forEach(function(x){var a=document.createElement('a');a.href='#'+x.id;a.title=x.dataset.title;d.appendChild(a)});function u(){var m=document.documentElement.scrollHeight-innerHeight;b.style.width=(m?scrollY/m*100:0)+'%';var y=scrollY+innerHeight/2,i=0;s.forEach(function(x,j){if(x.offsetTop<=y)i=j});[].forEach.call(d.children,function(x,j){x.classList.toggle('on',i===j)})}addEventListener('scroll',u,{passive:true});addEventListener('resize',u);u()})();</script>
+</body></html>

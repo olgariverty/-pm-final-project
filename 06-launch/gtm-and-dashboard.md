@@ -1,70 +1,66 @@
-# GTM Strategy & Success Dashboard (Module 6)
+# GTM and Success Dashboard
 
-## Launch anchor
+## Goal and audience
 
-- **Feature:** Riverty Wallet-Ready Instant Card — immediate provisioning to one supported phone wallet after approval.
-- **Goal:** Engagement. Turn earlier availability into sustained card usage.
-- **Audience:** Newly approved frequent Riverty users in Germany with an issued card and a compatible device. Nadine is the design persona, not a targeting filter.
-- **Launch size:** **S** for the controlled beta; **M** for targeted rollout after the experiment passes.
+- **Feature:** Phone-wallet provisioning for eligible Riverty cardholders
+- **Goal:** Engagement — deepen repeat card usage beyond partner checkout
+- **Audience:** Eligible, activated, loyal frequent Riverty cardholders in Germany with a compatible device and supported wallet
+- **Persona:** Lena informs the experience; she is not the targeting rule
 
-## Why this launch model
+## Launch tier
 
-The beta needs minimal external communication and strict experiment isolation. A successful result justifies a targeted rollout to a defined cardholder segment, not broad-market awareness or paid acquisition.
+- **S — controlled beta:** friends-and-family experiment with no broad promotion
+- **M — targeted rollout:** only after the experiment passes the primary metric and guardrail
 
-## Channels — owned only
+## Channels for the M-tier rollout
 
-1. **Approval and in-app flow:** Present the wallet option at the highest-intent moment and take eligible users directly into provisioning.
-2. **Targeted email:** Explain the value, eligibility, supported device, and setup steps.
-3. **Targeted push:** Bring eligible users back to the provisioning flow after rollout; do not use during the controlled experiment unless identical across arms.
+1. **Owned — in-app card banner:** prompts eligible users to start provisioning.
+2. **Owned — targeted email:** explains value, eligibility, and setup.
+3. **Owned — push notification:** deep-links eligible users into the flow.
 
-Paid acquisition, press, and broad earned media are deferred until after the targeted rollout demonstrates sustained value.
+During the experiment, promotional communication is held constant to protect attribution.
 
 ## Enablement and assets
 
-- Approval-screen and in-app content.
-- Setup guide and lightweight first-use walkthrough.
-- FAQ, eligibility rules, known-error guidance, response templates, and escalation path for Customer Service.
-- Technical runbook for wallet-provider and issuing incidents.
-- Experiment and post-launch performance dashboard.
+- Setup guide and in-app walkthrough
+- Eligibility and known-error guidance
+- FAQ, Customer Service macros, and escalation path
+- Experiment and rollout dashboard
+- Risk, Compliance, scheme, and wallet-provider readiness checklist
 
 ## Ownership and budget
 
-| Activity | Accountable owner |
-|---|---|
-| Product decision and launch readiness | Riverty Card Product Manager |
-| Technical readiness and incident response | Engineering Lead |
-| Lifecycle communication | Marketing Manager / Lifecycle Owner |
-| Customer Service readiness | Operations Lead |
-| Experiment and dashboard | Data Analyst |
-| Approval | Risk and Compliance owners |
+- **Experiment and launch:** Riverty Card Product Manager
+- **Technical readiness:** Engineering Lead
+- **Customer communication:** Lifecycle Marketing Manager
+- **Support readiness:** Customer Operations Lead
+- **Measurement:** Product Data Analyst
+- **Approval:** named Risk and Compliance approvers
 
-No paid-media budget is required. Potential incremental costs are wallet-provider, scheme, certification, localisation, and support-training capacity; confirm them before launch. Existing teams and tools cover normal delivery work, but capacity still needs explicit allocation.
+No paid media. Potential incremental costs are wallet-provider or scheme fees and dedicated Customer Service training capacity. Existing marketing, analytics, and support tools are used.
 
 ## Timeline
 
-1. **Beta:** Validate provisioning and operational readiness with a small friends-and-family cohort.
-2. **Experiment:** Run the 50/50 test without promotional nudges; monitor safety and the partner-checkout guardrail.
-3. **Targeted launch:** Roll out to the eligible segment only after the primary metric and guardrail pass.
-4. **Post-launch:** Monitor usage, retention, partner-checkout spend, incidents, and support demand; iterate before broader expansion.
+1. **Beta:** confirm dependencies, instrument events, and run the controlled experiment.
+2. **Decision:** apply ship / iterate / kill / pause rules after the fixed readout.
+3. **Targeted rollout:** activate owned channels only if the primary metric and guardrail pass.
+4. **Post-launch:** monitor provisioning, in-store usage, M3 retention, and partner-checkout spend.
 
 ## Success dashboard
 
-| KPI | Planning reference | Decision use |
+| Metric | Role | Decision use |
 |---|---|---|
-| Wallet-provisioning completion | Establish in beta | Diagnose setup friction |
-| First card purchase within 14 days | Compare variant vs control | Confirm earlier activation |
-| In-store card usage | Compare variant vs control | Confirm the acceptance mechanism |
-| Month 3 card retention | 69% synthetic baseline; proposed target 79% | Primary experiment and scale decision |
-| Partner-checkout spend per participant | Proposed boundary: no more than 3% below control | Protect merchant-first economics |
+| M3 card retention | Primary outcome | Scale only if lift is at least the proposed +10pp at p < 0.05 |
+| Provisioning completion | Mechanism | Diagnose setup friction |
+| At least one in-store wallet transaction | Mechanism | Confirm that provisioning creates relevant use |
+| Partner-checkout spend per randomised participant | Guardrail | Pause/stop if the proposed 3% boundary is breached |
 
 ## Bad signals
 
-- High entry into the flow but low completion: provisioning or authentication friction.
-- High provisioning but weak first use or in-store usage: availability is not creating customer value.
-- Early activation but no Month 3 lift: novelty rather than a durable habit.
-- Partner-checkout spend more than 3% below control: potential cannibalisation; pause and investigate.
-- Material fraud, arrears, Compliance, incident, or support escalation: stop expansion until resolved.
+- High flow starts but low provisioning completion: setup or provider friction.
+- High provisioning but low in-store wallet usage: weak customer value.
+- Higher card usage but partner-checkout spend more than 3% below control: merchant-channel cannibalisation.
 
-## Most likely post-launch decision
+## Likely decision
 
-Iterate if provisioning or first use is weak. Scale the targeted rollout only if Month 3 retention improves by at least the proposed 10 percentage points, the partner-checkout guardrail holds, and operational readiness is confirmed.
+Iterate if setup or in-store use is weak. Scale only if M3 retention improves by at least 10 percentage points and the proposed partner-checkout guardrail holds.
