@@ -1,57 +1,45 @@
-# Hypothesis & Success Metrics (Module 3)
-
-## Hypothesis check
-
-- **Design persona:** Nadine, 38, a frequent shopper who uses three or more payment methods and wants fewer payment decisions.
-- **Experiment cohort:** Newly approved frequent Riverty users in Germany with an issued card and a device compatible with the selected pilot wallet.
-- **Goal:** Build repeat card usage beyond partner checkout.
-- **Friction:** Riverty is unavailable at many non-partner and in-store payment moments, forcing users to switch methods.
-- **Current workaround:** Klarna, PayPal, or an existing debit or credit card.
-- **Value proposition:** Make the approved Riverty Card available immediately through one supported phone wallet.
+# Hypothesis and Success Metrics
 
 ## Evidence reconciliation
 
 ### Qualitative evidence
 
-Synthetic research indicates that some frequent shoppers experience payment fragmentation as repeated decision-making and memory burden.
+Lena uses whichever payment option appears at checkout and rarely seeks out Riverty. Riverty is unavailable where partner merchants do not offer it, so she falls back to Klarna, PayPal, or an existing bank card.
 
-### Quantitative evidence
+### Quantitative planning inputs
 
-- 78% use three or more payment methods — **synthetic directional signal**.
-- Riverty is selected 6% of the time when competing beside Klarna or PayPal — **synthetic directional signal**.
-- 69% Month 3 retention among a synthetic loyal-heavy cohort — **planning benchmark whose comparability to the experiment cohort must be validated**.
-- A 3% reduction in partner-checkout spend among synthetic card users — **risk signal, not an approved tolerance**.
+| Input | Value | Status |
+|---|---:|---|
+| M3 card retention | 69% | Synthetic planning benchmark for an activated loyal-heavy cohort; comparability must be validated |
+| Eligible-to-activated conversion | 6.31% | Synthetic directional signal for loyal heavy users |
+| Partner-checkout spend signal | -3% | Synthetic card-vs-non-card signal; used only to propose a guardrail |
+| MDE | +10 percentage points | Proposed decision threshold |
+| Sample per arm | 301 | Calculator estimate at 80% power and 5% significance, conditional on the 69% baseline and +10pp MDE |
 
-## Experiment hypothesis
+## Hypothesis
 
-We believe that offering newly approved frequent Riverty users immediate provisioning of their issued card to one supported phone wallet will increase repeat card usage beyond partner checkout. We will measure success through Month 3 card retention and protect partner-checkout spend throughout the test.
+> We believe that enabling eligible, activated, loyal frequent Riverty cardholders to add their issued card to one supported phone wallet will increase repeat card usage beyond partner checkout. We will measure this through M3 card retention and protect partner-checkout Riverty spend per randomised participant.
 
-## Metrics
+## Metric definitions
 
 ### Primary success metric
 
-**Month 3 card retention:** the percentage of randomised approved cardholders with at least one Riverty Card purchase during their Month 3 observation window.
+**M3 card retention:** percentage of all randomised activated pilot cardholders who make at least one Riverty Card purchase in Month 3. Month 3 is the third 30-day period after randomisation. Analysis is intention-to-treat.
 
 ### Mechanism metrics
 
-- Wallet-provisioning completion rate.
-- Share of randomised cardholders making their first card purchase within 14 days.
-- Share of randomised cardholders making at least one in-store card purchase.
+- Wallet-provisioning completion rate among the variant cohort
+- Share of randomised variant participants with at least one in-store wallet transaction
+- Time from randomisation to first Riverty Card transaction
 
-These explain the mechanism but do not replace the primary decision metric.
+These explain why the primary metric moved; they do not replace the decision metric.
 
 ### Guardrail
 
-**Partner-checkout Riverty spend per randomised participant**, including participants with zero partner-checkout spend. The proposed boundary is no more than a 3% relative reduction in the variant versus control.
+**Partner-checkout Riverty spend per randomised participant:** net-of-returns partner-checkout spend in the same observation window, including participants with zero spend.
 
-## Planning assumptions
+Proposed boundary: the variant must not reduce this metric by more than 3% relative to control. The boundary is a decision proposal informed by a synthetic signal, not an approved business threshold.
 
-- **Baseline:** 69% synthetic Month 3 retention benchmark; cohort comparability must be checked before launch.
-- **MDE:** +10 percentage points absolute, from 69% to 79% — proposed minimum worthwhile lift.
-- **Sample:** 301 users per arm at 80% power and 5% significance, subject to baseline validation.
-- **Split:** 50/50.
-- **Decision window:** Three months per participant; read after the final enrolled participant completes Month 3.
+## Decision window
 
-## Full hypothesis
-
-> We believe that offering newly approved frequent Riverty users immediate provisioning of their issued card to one supported phone wallet will increase Month 3 card retention by at least 10 percentage points, from a synthetic planning baseline of 69%, by enabling in-store use before the physical card arrives. We will protect partner-checkout Riverty spend per randomised participant, with a proposed tolerance of no more than a 3% relative reduction versus control.
+Three months per participant. The final read occurs when the last enrolled participant completes the Month 3 window, plus the agreed settlement lag. Data-quality checks are allowed; efficacy results are not reviewed early.
