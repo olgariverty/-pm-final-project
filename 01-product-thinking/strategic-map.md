@@ -1,18 +1,17 @@
-# Strategic Discovery Map (Module 1)
+# Strategic Map
 
-## Strategic direction
+- **Business constraint:** Riverty depends on partner checkout to reach consumers.
+- **User friction:** Lena cannot use Riverty where a partner merchant does not offer it.
+- **Opportunity:** Let eligible, activated cardholders add their issued Riverty Card to one supported phone wallet for in-store use.
+- **Primary behaviour:** Repeat card usage beyond partner checkout.
+- **Primary metric:** M3 card retention among randomised activated cardholders.
+- **Merchant protection:** Partner-checkout Riverty spend per randomised participant.
+- **Decision:** Scale only if repeat usage improves and the merchant guardrail holds.
 
-- **Business objective:** Build a direct, everyday consumer relationship without weakening Riverty's merchant-first checkout business.
-- **Customer behaviour:** Frequent shoppers switch between BNPL providers and existing cards depending on what each merchant accepts.
-- **Core opportunity:** Give approved cardholders immediate in-store access through one supported phone wallet, before the physical card arrives.
-- **Riskiest assumption:** Earlier, broader availability will create incremental repeat usage rather than move existing volume away from partner checkout.
+## What this project does not assume
 
-## Prioritisation decisions
-
-- **Prioritise now:** Card approval and issuing prerequisites, immediate phone-wallet provisioning, and measurement of card usage and partner-checkout spend.
-- **Validate next:** First-use guidance and a second wallet, based on provisioning data and the pilot cohort's device mix.
-- **Do not prioritise:** Cashback, partner promotions, creator cards, or additional credit propositions. They add cost or regulatory scope without proving the core acceptance hypothesis.
-
-## PM takeaway
-
-AI can structure options and accelerate execution. The PM must define the strategic tension, evidence boundaries, dependencies, decision rules, and what not to build.
+- A specific wallet platform
+- Immediate issuance at approval
+- A physical-card delivery sequence
+- New credit or repayment terms
+- That Lena's pay-after-deciding need is solved by wallet provisioning

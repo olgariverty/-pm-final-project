@@ -1,28 +1,21 @@
-# Problem Hook & Value Proposition (Module 1)
+# Problem Hook
 
-## Chosen case
+## Persona
 
-Riverty's first consumer card in Germany.
+Lena, 32, Cologne, is a frequent BNPL user who shops mainly on her phone. She prefers money to leave her account only after she has decided to keep an item.
 
-## Strategic crisis
+## Current behaviour
 
-If Riverty does nothing, it remains dependent on partner checkout for consumer reach while established payment methods continue to own the customer's everyday payment habit.
-
-## Customer moment of misery
-
-Nadine, a frequent shopper using three or more payment methods, has to remember which option works at each merchant and switch again when Riverty is unavailable.
+Lena uses whichever payment option is available at checkout. She knows Riverty but does not actively seek it out. When a merchant does not offer Riverty, she uses Klarna, PayPal, or an existing debit or credit card.
 
 ## Problem hook
 
-Riverty's limited acceptance forces frequent users to switch payment methods and prevents Riverty from becoming an everyday payment choice.
+Riverty's dependence on partner checkout limits its presence in everyday payments and leaves frequent users under-monetised. A consumer card could extend Riverty beyond partner checkout, provided it complements rather than cannibalises merchant relationships.
 
-## Value proposition
+## Scope boundary
 
-Make an approved Riverty Card available immediately through one supported phone wallet, giving customers one consistent way to pay online and in store while protecting the existing partner-checkout business.
+Phone-wallet provisioning addresses acceptance beyond partner checkout, especially in store. It does **not** solve Lena's separate desire to pay only after deciding what to keep; that need requires separate validation against the card's repayment terms.
 
-## Cold read
+## Strategic question
 
-- **Risk:** A moderate strategic threat, not a proven crisis. It warrants a capped test rather than a broad launch.
-- **Customer pain:** Payment fragmentation is supported by synthetic research, but its severity and willingness to adopt another card still require validation.
-- **Business tension:** Broader acceptance is valuable only if it creates incremental usage without cannibalising partner checkout.
-- **Evidence boundary:** All user-research references and quantitative figures in this project are synthetic and directional unless explicitly stated otherwise.
+Can phone-wallet access create durable card usage beyond partner checkout without reducing existing partner-checkout spend?
