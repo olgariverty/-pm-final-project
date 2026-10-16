@@ -1,76 +1,46 @@
-# A/B Experiment Brief (Module 5)
+# A/B Experiment Brief
 
 ## Experiment
 
-**Riverty Wallet-Ready Instant Card — immediate phone-wallet provisioning at approval.**
+**Phone-wallet provisioning for eligible, activated Riverty cardholders.**
 
-## Parameters
+| Parameter | Decision | Status |
+|---|---|---|
+| Persona | Lena, 32, Cologne; design context, not a targeting rule | Case input |
+| Cohort | Eligible, activated, loyal frequent cardholders with a compatible device | Eligibility to define before launch |
+| Primary metric | M3 card retention: at least one Riverty Card purchase in the third 30-day period after randomisation | Defined |
+| Baseline | 69% | Synthetic planning benchmark; validate comparability |
+| MDE | +10 percentage points absolute | Proposed |
+| Sample | 301 per arm | Proposed calculator estimate at 80% power / 5% significance |
+| Split | 50/50 | Proposed |
+| Duration | 3 months per participant | Proposed |
+| Guardrail | Partner-checkout spend per randomised participant | Defined |
+| Guardrail boundary | No more than 3% relative reduction vs control | Proposed from synthetic signal |
 
-| Parameter | Decision |
-|---|---|
-| Feature under test | Offer provisioning of an issued Riverty Card to one supported phone wallet immediately after approval, rather than after physical-card arrival |
-| Design persona | Nadine, 38, a frequent shopper who uses several payment methods and wants fewer payment decisions |
-| Experiment cohort | Newly approved frequent Riverty users in Germany with an issued card and a compatible device |
-| Expected outcome | Higher repeat card usage through in-store availability before physical-card arrival |
-| Primary success metric | Month 3 card retention: percentage of randomised approved cardholders with at least one Riverty Card purchase in their Month 3 observation window |
-| Baseline | 69% synthetic planning benchmark; validate comparability before launch |
-| Guardrail | Partner-checkout Riverty spend per randomised participant, variant versus control |
-| Guardrail boundary | Proposed: no more than a 3% relative reduction versus control |
-| MDE | +10 percentage points absolute, from 69% to 79% — proposed |
-| Sample size | 301 users per arm; 602 total — recalculate if the baseline or MDE changes |
-| Traffic split | 50/50 |
-| Power / significance | 80% power; p < 0.05, two-sided |
-| Participant duration | Three months per participant |
-| Read date | After the final enrolled participant completes the Month 3 observation window |
+## Control and variant
 
-All figures are synthetic planning inputs or proposed thresholds, not observed Riverty performance or approved business limits.
+**Control A:** Eligible, activated pilot cardholders use the current Riverty Card experience without phone-wallet provisioning during the experiment.
 
-## Control vs variant
+**Variant B:** The same cardholders and card experience, plus access to one supported phone-wallet provisioning flow for in-store payments, with success feedback and an actionable recovery path.
 
-### Control (A)
-
-The approved participant receives the same issued Riverty Card and can use its existing online functionality. Phone-wallet provisioning becomes available only after the physical card arrives.
-
-### Variant (B)
-
-The same cardholder receives the same card and terms, but phone-wallet provisioning is offered immediately after approval. The flow includes authentication, progress, success, clear failure reason, retry, and support access.
-
-### Held constant
-
-- Application, KYC, eligibility, approval criteria, and card issuing.
-- Card terms, credit limit, pricing, repayment, and fraud controls.
-- Existing online card functionality and physical-card fulfilment.
-- Supported wallet platform and wallet-add flow; only availability timing differs.
-- Support model, app version, event definitions, and measurement windows.
-- No nudges, promotions, rewards, instalments, or second wallet during the experiment.
+**Held constant:** Card terms, credit limits, repayment, eligibility, card issuing, existing card functionality, merchant acceptance, support routing, app version, and metric definitions. The only experiment difference is access to phone-wallet provisioning.
 
 ## Hypothesis
 
-> We believe that offering newly approved frequent Riverty users immediate provisioning of their issued card to one supported phone wallet will increase Month 3 card retention by at least 10 percentage points, from a synthetic planning baseline of 69%, by enabling in-store use before the physical card arrives. We will protect partner-checkout Riverty spend per randomised participant, with a proposed tolerance of no more than a 3% relative reduction versus control.
-
-## Mechanism metrics
-
-- Wallet-provisioning completion rate.
-- First Riverty Card purchase within 14 days.
-- At least one in-store Riverty Card purchase.
-- Time from approval to first card purchase.
-
-These metrics diagnose the mechanism; they are not substitutes for the primary decision metric.
+> We believe that phone-wallet provisioning for eligible, activated, loyal frequent Riverty cardholders will increase repeat card usage beyond partner checkout, measured by a proposed 10 percentage point absolute lift in M3 card retention within three months per participant. We will protect partner-checkout Riverty spend per randomised participant.
 
 ## Decision rules
 
-### Ship
+- **Ship:** M3 card retention improves by at least 10 percentage points at p < 0.05 and partner-checkout spend declines by no more than 3% relative to control.
+- **Iterate:** Direction is positive but below the MDE, or provisioning take-up shows correctable setup friction.
+- **Kill:** The primary metric is clearly negative at the final read, or the guardrail is materially breached.
+- **Pause:** Partner-checkout spend is more than 3% below control in two consecutive weekly safety reads, or a material Risk/Compliance incident occurs. The Experiment Owner pauses enrolment with Risk and Compliance.
+- **Inconclusive:** The confidence interval includes no effect at the planned sample. This is not evidence of equivalence.
 
-Ship the targeted rollout if Month 3 card retention improves by at least 10 percentage points at p < 0.05, the partner-checkout guardrail remains within the proposed 3% boundary, and no critical Risk or Compliance issue is identified.
+## Readout
 
-### Iterate
+The final efficacy read occurs after the last enrolled participant completes Month 3 plus the agreed settlement lag. No early efficacy stopping. Operational and guardrail monitoring may continue throughout.
 
-Iterate if the primary direction is positive but below the MDE, provisioning or early in-store use is weak, or the guardrail result is inconclusive. Diagnose the funnel before expanding reach.
+## Pre-launch gates
 
-### Kill
-
-Do not ship the feature if the primary metric shows no improvement or moves negatively at the full readout, or if evidence shows that immediate provisioning does not create sustained usage.
-
-### Pause
-
-Pause enrolment into the variant if partner-checkout spend falls more than 3% below control in two consecutive monitoring periods or if a material Risk, fraud, Compliance, or provisioning incident occurs. Investigate before resuming. Safety and data-quality monitoring may continue before the primary readout; efficacy results remain blinded.
+Confirm wallet/provider support, eligibility, activation and Month 3 definitions, baseline comparability, sample feasibility, Risk/Compliance approval, and Customer Service readiness.
