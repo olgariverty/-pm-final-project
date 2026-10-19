@@ -145,7 +145,7 @@
     <div class="cut-list" id="cutList" data-lane="cut"></div>
   </section>
 
-  <footer>Click a card for scores and dependencies. Drag cards between lanes. Value and Effort scores (1 to 5) are relative judgements, not measurements.</footer>
+  <footer>Click a card for scores and dependencies. Drag cards between lanes. Value and Effort scores (1 to 5) are relative judgements, not measurements. High = 3 or more.</footer>
 </div>
 
 <script>
@@ -157,7 +157,7 @@
     "Time Sinker":   {cls:"ts", color:"var(--ts-fg)"}
   };
   var LANES = [
-    {id:"now",  title:"NOW",   note:"Prove the core hypothesis", banner:"Build only what is required to compare phone-wallet provisioning with the current card experience."},
+    {id:"now",  title:"NOW",   note:"Prove the core hypothesis", banner:"Build only what is required to compare phone-wallet provisioning with the current card experience. Now covers prerequisites plus the test build, not a single-sprint commitment."},
     {id:"next", title:"NEXT",  note:"Improve adoption after readout"},
     {id:"later",title:"LATER", note:"Separate product bets"}
   ];
@@ -166,7 +166,7 @@
     {id:1, name:"Card readiness", lane:"now", value:5, effort:4, quad:"Major Project",
      role:"Launch prerequisite",
      deps:["Risk","Compliance","Card processor"],
-     why:"An approved card must be active and eligible for secure wallet tokenisation before the experiment can start."},
+     why:"Application, credit design, issuing and activation must be in place so an approved card is active and eligible for secure wallet tokenisation before the experiment starts."},
     {id:2, name:"Phone-wallet provisioning", lane:"now", value:5, effort:3, quad:"Major Project",
      role:"Feature under test",
      deps:["Wallet provider","Scheme","Compatible device"],
@@ -178,7 +178,7 @@
     {id:4, name:"Guided onboarding", lane:"next", value:3, effort:1, quad:"Quick Win",
      deps:["Experiment readout"],
      why:"Can address setup or first-use friction after the clean experiment establishes where users drop."},
-    {id:5, name:"Card activity view", lane:"next", value:3, effort:2, quad:"Fill-In",
+    {id:5, name:"Card activity view", lane:"next", value:3, effort:2, quad:"Quick Win",
      deps:["Card data feeds","Experiment readout"],
      why:"May improve control after purchase, but is excluded from the experiment to protect attribution."},
     {id:6, name:"Second supported wallet", lane:"next", value:4, effort:3, quad:"Major Project",
@@ -190,10 +190,9 @@
     {id:8, name:"Pay-after-deciding proposition", lane:"later", value:4, effort:5, quad:"Major Project",
      deps:["Customer validation","Risk","Compliance"],
      why:"A separate need from Lena requiring its own credit, repayment, evidence and decision framework."},
-    {id:9, name:"Cashback and rewards", lane:"cut", value:2, effort:4, quad:"Time Sinker",
+    {id:9, name:"Rewards", lane:"later", value:2, effort:4, quad:"Time Sinker",
      deps:["Budget","Commercial model"],
-     why:"Could mask whether availability itself creates repeat usage.",
-     reason:"Cut from the pilot: adds cost and breaks attribution before the core habit hypothesis is proven."},
+     why:"A separate bet, excluded from the beta: it could mask whether availability itself creates repeat usage."},
     {id:10, name:"Partner promotions", lane:"cut", value:2, effort:4, quad:"Time Sinker",
      deps:["Merchant funding","Commercial agreements"],
      why:"Does not remove the payment-fragmentation problem and could distort the merchant guardrail.",

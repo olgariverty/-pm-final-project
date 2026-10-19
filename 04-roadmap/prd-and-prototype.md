@@ -15,7 +15,6 @@ Riverty is unavailable where partner merchants do not offer it. Lena therefore f
 3. The user sees a clear success state.
 4. A failure state explains the next action: retry, eligibility guidance, or support escalation.
 5. Wallet and in-store card events are instrumented for the experiment.
-6. Card terms, credit policy, repayment, and existing card functionality are unchanged between experiment arms.
 
 ## Dependencies
 
@@ -39,8 +38,8 @@ Riverty is unavailable where partner merchants do not offer it. Lena therefore f
 
 https://req-pilot.lovable.app/
 
-The prototype simulates the provisioning flow and tests usability. It does not process real payments, prove provider readiness, or validate M3 impact.
+The prototype simulates the provisioning flow and tests usability. It does not process real payments, prove provider readiness, or validate retention or M3 impact.
 
 ## Experiment isolation
 
-Control has the same activated cardholder and current card experience without phone-wallet provisioning during the three-month experiment. Variant adds only access to the provisioning flow. All other terms, support, app version, and measurement definitions remain constant.
+Control has the same activated cardholder and current card experience without phone-wallet provisioning during the three-month experiment. Variant adds only access to the provisioning flow. Card terms, credit policy, repayment, existing card functionality, support routing, app version, and measurement definitions remain constant between arms.
