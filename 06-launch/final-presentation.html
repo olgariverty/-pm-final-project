@@ -25,9 +25,10 @@
 <section id="s2" data-title="Strategy">
   <p class="eyebrow">Slide 5 · Strategy</p>
   <h2>Riverty disappears when partner checkout does</h2>
-  <div class="grid g2">
-    <div class="card"><span class="label" style="color:var(--pink)">Customer problem</span><p>Where merchants do not offer Riverty, Lena uses Klarna, PayPal, or a bank card.</p></div>
-    <div class="card"><span class="label" style="color:var(--cyan)">Strategic opportunity</span><p>One supported phone wallet could create an in-store route for the issued card. Credit terms stay constant; credit design remains an external prerequisite.</p></div>
+  <div class="grid g3">
+    <div class="card"><span class="label" style="color:var(--orange)">Problem hook</span><p>Lena uses BNPL on most non-trivial purchases but takes whichever provider appears at checkout. She knows Riverty, but rarely seeks it out, so Riverty only reaches her where partner merchants show it. A card could give her a reason to choose Riverty beyond partner checkout.</p></div>
+    <div class="card"><span class="label" style="color:var(--pink)">Moment of misery</span><p>Where a partner merchant does not offer Riverty, Lena falls back to Klarna, PayPal, or a bank card.</p></div>
+    <div class="card"><span class="label" style="color:var(--cyan)">Value proposition</span><p>For Lena, a Riverty card could give her a reason to use Riverty beyond partner checkout.</p><p class="note"><b>Why now:</b> Riverty remains dependent on merchant checkout while Klarna and PayPal remain available.</p></div>
   </div>
   <div class="hero" style="margin-top:14px"><span class="label">Hypothesis informed by synthetic planning signals</span><p class="sub" style="font-size:20px;margin:5px 0 0">We believe wallet access can increase repeat card use while protecting partner checkout.</p></div>
   <div class="grid g3" style="margin-top:12px">
@@ -35,7 +36,7 @@
     <div class="tile"><div class="metric" style="color:var(--cyan)">2.19% / 49%</div><span class="tag syn">Synthetic</span><p class="note">Lena-like eligible-to-activated conversion / M3 retention</p></div>
     <div class="tile"><div class="metric" style="color:var(--pink)">−3%</div><span class="tag syn">Synthetic</span><p class="note">Partner-checkout spend signal</p></div>
   </div>
-  <p class="note" style="margin-top:10px"><b>Market-entry choice:</b> Lena remains the case persona with no Riverty preference; the pilot targets loyal-heavy cardholders who share her acceptance friction. <b>Cost of waiting:</b> Riverty remains dependent on merchant checkout while Klarna and PayPal remain available.</p>
+  <p class="note" style="margin-top:10px"><b>Market-entry choice:</b> Lena remains the case persona with no Riverty preference; the pilot targets loyal-heavy cardholders who share her acceptance friction.</p>
 </section>
 
 <section id="s3" data-title="Research">
@@ -44,13 +45,14 @@
   <div class="grid g4">
     <div class="card"><span class="label">Persona <span class="tag case">Case</span></span><p><b>Lena, 32, Cologne.</b> Frequent BNPL user who shops mainly on her phone.</p></div>
     <div class="card"><span class="label">Goal <span class="tag case">Case</span></span><p>Pay only after deciding to keep an item.</p></div>
-    <div class="card"><span class="label">Core friction <span class="tag case">Case</span></span><p>Riverty reaches her only where partner merchants offer it.</p></div>
+    <div class="card"><span class="label">Moment of misery <span class="tag case">Case</span></span><p>Where a partner merchant does not offer Riverty, Lena falls back to Klarna, PayPal, or a bank card.</p></div>
     <div class="card"><span class="label">Workaround <span class="tag case">Case</span></span><p>Klarna, PayPal, or an existing debit or credit card.</p></div>
   </div>
-  <div class="steps" style="margin-top:17px">
+  <span class="label" style="margin-top:17px">Journey map</span>
+  <div class="steps" style="margin-top:8px">
     <div class="step"><span class="label">1 · Activate</span><b>Enter eligible cohort</b></div>
     <div class="step"><span class="label">2 · Provision</span><b>Add card to wallet</b></div>
-    <div class="step" style="border-color:var(--orange)"><span class="label">3 · Use</span><b>Pay in store</b></div>
+    <div class="step" style="border-color:var(--orange)"><span class="label">3 · Use <span class="tag" style="color:var(--orange);margin-left:6px">Moment of misery</span></span><b>Pay in store</b></div>
     <div class="step"><span class="label">4 · Repeat</span><b>Use card during days 61–90</b></div>
   </div>
   <p class="note" style="margin-top:14px"><span class="tag case">Case</span> Assigned-case input &nbsp; <span class="tag syn">Synthetic</span> Directional planning signal &nbsp; <span class="tag prop">Proposed</span> Decision to validate. Scope boundary: wallet provisioning addresses acceptance, not payment timing.</p>
@@ -109,7 +111,7 @@
   <p class="note" style="margin:8px 0 0"><b>In-store card use:</b> see Validation.</p>
   <div class="grid g2" style="margin-top:14px">
     <div class="card"><span class="label">Beta communication</span><p>In-product feature exposure only; control users remain uncommunicated to protect attribution.</p></div>
-    <div class="card"><span class="label">Accountability and gaps</span><p><b>Owners:</b> Card PM, Engineering Lead, Lifecycle Marketing, Operations Lead, Data Analyst. <b>Gaps:</b> CS training, wallet certification, dashboard readiness.</p></div>
+    <div class="card"><span class="label">Accountability and gaps</span><p><b>Owners:</b> Card PM, Engineering Lead, Lifecycle Marketing, Operations Lead (Customer Service), Data Analyst. <b>Gaps:</b> CS training, wallet certification, dashboard readiness.</p></div>
   </div>
   <p class="note" style="margin-top:10px"><b>Bad signal:</b> card usage rises while partner-checkout spend falls beyond the approved boundary.</p>
 </section>
