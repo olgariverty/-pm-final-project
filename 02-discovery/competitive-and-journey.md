@@ -6,10 +6,11 @@
 
 ## Goal and friction
 
-- **Goal:** Use a flexible payment method while staying in control of payment timing.
-- **Relevant friction for this project:** Riverty cannot be used outside partner checkout.
+- **Goal:** Pay only after deciding to keep an item.
+- **Moment of misery:** Where a partner merchant does not offer Riverty, Lena falls back to Klarna, PayPal, or a bank card.
+- **Relevant friction for this project:** Riverty reaches her only where partner merchants offer it; it cannot be used outside partner checkout.
 - **Workaround:** Klarna, PayPal, or an existing debit or credit card.
-- **Scope boundary:** Wallet provisioning expands acceptance; it does not itself provide pay-after-deciding.
+- **Scope boundary:** Wallet provisioning expands acceptance; it does not itself provide pay-after-deciding, which remains unvalidated.
 
 ## Competitive alternatives
 
@@ -25,11 +26,11 @@
 1. **Activate:** an eligible user activates the issued Riverty Card.
 2. **Provision:** the variant can add the card to one supported phone wallet.
 3. **Use:** the user makes an in-store wallet transaction at a compatible terminal.
-4. **Repeat:** the user makes at least one Riverty Card purchase in Month 3.
+4. **Repeat:** the user makes at least one Riverty Card purchase during days 61–90.
 
 ## Research questions
 
 - Does wallet provisioning complete successfully?
 - Does it create in-store card usage?
-- Does card use persist into Month 3?
+- Does card use persist through days 61–90?
 - Does partner-checkout spend remain within the proposed guardrail?
